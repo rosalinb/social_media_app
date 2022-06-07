@@ -3,12 +3,12 @@ CREATE DATABASE social_media_app;
 
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
-  name TEXT,
-  username TEXT,
-  email TEXT,
   avatar TEXT,
-  role TEXT,
-  password_digest TEXT
+  name TEXT,
+  email TEXT, 
+  user_type TEXT,
+  password_digest TEXT,
+  about_you TEXT
 );
 
 CREATE TABLE posts(
