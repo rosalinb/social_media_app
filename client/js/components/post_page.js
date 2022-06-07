@@ -1,8 +1,8 @@
 function renderPostPage() {
   document.querySelector('#page').innerHTML = `
     <section>
-      <form onSubmit="createPost(event)>
-        <p>username and profile picture here</p>
+      <form onSubmit="createPost(event)">
+        <p>${state.loggedInUserName.userName}</p>
         <textarea name='post' rows='4' cols='50' placeholder='Whats's happening?'></textarea>
         <span onClick="">Attachment</span>
         <button>Post</button>

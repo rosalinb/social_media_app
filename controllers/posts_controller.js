@@ -4,21 +4,15 @@ const router = express.Router()
 // models
 const Post = require('../models/post')
 
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
+  const name = req.body.name
+  const post = req.body.post
+  const attachment = req.body.attachment
+
   Post
-  .findAll()
-  .then(posts => res.json(posts))
+    .create(name, post, attachment)
+    .then(post => res.json(post))
 })
-
-// router.post('/', (req, res) => {
-//   const name = req.body.name
-//   const clue = req.body.clue
-//   const address = req.body.address
-
-//   Post
-//     .create(name, clue, address)
-//     .then(post => res.json(post))
-// })
 
 // router.delete('/:id', (req, res) => {
 //   const postId = req.params.id
@@ -28,4 +22,4 @@ router.get('/', (req, res) => {
 //     .then(() => res.json({message: 'deleted successfully'}))
 // })
 
-// module.exports = router
+module.exports = router
