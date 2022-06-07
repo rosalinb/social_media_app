@@ -1,13 +1,12 @@
-function renderPostList() {
+function renderPostsList() {
   document.querySelector('#page').innerHTML = `
     <h2>Welcome to the Social Media App</h2>
-    <section>
-      ${renderHomePage()}
-    </section>
   `
+  renderHomePage()
 }
 
 function renderHomePage() {
+  console.log('hey')
   return state.posts.map(post => `
     <section class='post' data-id='${post.id}'>
       <header>
