@@ -10,10 +10,12 @@ const state = {
 //     renderProfile();
 //   });
 
-// fetch("/api/posts")
-//   .then((res) => res.json())
-//   .then((posts) => {
-//     state.posts = posts;
-//     renderPostList();
-//     header();
-//   });
+
+fetch('/api/posts')
+  .then((res) => res.json())
+  .then((posts) => {
+    state.posts = posts;
+    renderPostList();
+    header();
+  });
+
