@@ -4,14 +4,10 @@ const db = require('../db/db');
 // need to be fed with the session.id to find the user data, render it and
 
 const Profile = {
-  getProfileInfo: () => {
-    const sql = 'SELECT avatar, name, email, about_you';
-    return db.query(sql).then((dbRes) => dbRes.rows);
+  getProfileInfo: (id) => {
+    const sql = 'SELECT avatar, name, email, about_you FROM users WHERE $1';
+    return db.query(sql, [id]).then((dbRes) => dbRes.rows)[0];
   },
-
-  editProfileInfo: () => {
-    const sql 
-  }
 };
 // const User = {
 //   user: user.id,

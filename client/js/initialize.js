@@ -1,7 +1,8 @@
 const state = {
   posts: [],
-  user: {},
+  state: {},
 };
+
 
 fetch("/api/profile")
   .then((res) => res.json())
@@ -9,6 +10,7 @@ fetch("/api/profile")
     state.profile = profile;
     renderProfile();
   });
+
 
 fetch("/api/posts")
   .then((res) => res.json())
