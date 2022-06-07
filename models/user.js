@@ -1,27 +1,25 @@
-const db = require("../db/db")
+const db = require("../db/db");
 
 const User = {
   findByEmail: (email) => {
     const sql = `
       SELECT * FROM users
       WHERE email = $1
-    `
+    `;
 
-    return db
-      .query(sql, [email])
-      .then(dbRes => dbRes.rows[0])
+    return db.query(sql, [email]).then((dbRes) => dbRes.rows[0]);
   },
 
-  create: (name, username, email, avatar, role, passwordDigest) => {
+  create: (avatar, name, email, user_type, passwordDigest, about_you) => {
     const sql = `
-      INSERT INTO users(name, username, email, avatar, role, password_digest) VALUES($1, $2, $3, $4, $5, $6)
+      INSERT INTO users(avatar, name, email, user_type, password_digest, about_you) VALUES($1, $2, $3, $4, $5, $6)
       RETURNING *
-    `
+    `;
 
     return db
-      .query(sql, [name, username, email, avatar, role, passwordDigest])
-      .then(dbRes => dbRes.rows[0].name)
-  }
-}
+      .query(sql, [avatar, name, email, user_type, passwordDigest, about_you])
+      .then((dbRes) => dbRes.rows[0].name);
+  },
+};
 
-module.exports = User
+module.exports = User;
