@@ -36,7 +36,7 @@ function signUp(event) {
         console.log(res.error);
       } else {
         state.loggedInUserName = res;
-        renderPostList();
+        renderPostsList();
       }
     });
 }
