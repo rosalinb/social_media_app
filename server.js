@@ -5,7 +5,7 @@ const logger = require("./middlewares/logger");
 const sessions = require("./middlewares/sessions");
 
 //controllers
-// const postsController = require("./controllers/posts_controller");
+const postsController = require("./controllers/posts_controller");
 const usersController = require("./controllers/users_controller");
 const sessionsController = require("./controllers/sessions_controller");
 
@@ -23,6 +23,6 @@ app.use(express.json());
 
 app.use(sessions);
 
-// app.use("/api/posts", postsController);
+app.use("/api/posts", postsController);
 app.use("/api/users", usersController);
 app.use("/api/sessions", sessionsController);

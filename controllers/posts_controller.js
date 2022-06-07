@@ -6,7 +6,7 @@ const Post = require("../models/post");
 
 
 router.post('/', (req, res) => {
-  const name = req.body.name
+  const name = req.session.userId
   const post = req.body.post
   const attachment = req.body.attachment
 
@@ -16,7 +16,9 @@ router.post('/', (req, res) => {
 })
 
 router.get("/", (req, res) => {
-  Post.findAll().then((posts) => res.json(posts));
+  Post
+  .findAll()
+  .then((posts) => res.json(posts));
 });
 
 

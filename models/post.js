@@ -10,7 +10,15 @@ const Post = {
     return db
     .query(sql, [name, post, attachment])
     .then(dbRes => dbRes.rows[0])
-  }
+  },
+
+  findAll: () => { 
+    const sql = 'SELECT * FROM posts'
+
+    return db
+      .query(sql)
+      .then(dbRes => dbRes.rows)
+  },
 }
 
 module.exports = Post
