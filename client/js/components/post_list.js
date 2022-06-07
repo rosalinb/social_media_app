@@ -4,11 +4,13 @@ function renderPostList() {
     <section>
       ${renderHomePage()}
     </section>
-  `
+  `;
 }
 
 function renderHomePage() {
-  return state.posts.map(post => `
+  return state.posts
+    .map(
+      (post) => `
     <section class='post' data-id='${post.id}'>
       <header>
         <h2>${post.id}</h2>
@@ -17,5 +19,7 @@ function renderHomePage() {
       <p>${post.attachment}</p>
       <span class="" onClick="likePost(event)">Like</span>
     </section>
-  `).join('')
+  `
+    )
+    .join('');
 }

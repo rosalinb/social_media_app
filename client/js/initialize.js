@@ -1,15 +1,14 @@
 const state = {
   posts: [],
-  state: {},
+  profile: [],
 };
 
-// fetch("/api/profile")
-//   .then((res) => res.json())
-//   .then((profile) => {
-//     state.profile = profile;
-//     renderProfile();
-//   });
-
+fetch('/api/profiles')
+  .then((res) => res.json())
+  .then((profile) => {
+    state.profile = res;
+    renderProfilePage();
+  });
 
 fetch('/api/posts')
   .then((res) => res.json())
@@ -18,4 +17,3 @@ fetch('/api/posts')
     renderPostList();
     header();
   });
-

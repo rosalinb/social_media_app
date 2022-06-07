@@ -1,44 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Media App</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media App</title>
 
-<!-- CSS links -->
-  <link rel="stylesheet" href="/css/nav">
-  <link rel="stylesheet" href="/css/form">
-  <link rel="stylesheet" href="/css/main">
-  <link rel="stylesheet" href="/css/profile">
-  <link rel="stylesheet" href="/css/post">
+    <!-- CSS links -->
+    <link rel="stylesheet" href="/css/nav" />
+    <link rel="stylesheet" href="/css/form" />
+    <link rel="stylesheet" href="/css/main" />
+    <link rel="stylesheet" href="/css/profile" />
+    <link rel="stylesheet" href="/css/post" />
 
-<!-- JS links -->
-  <script defer src="/js/components/sign_up.js"></script>
-  <script defer src="/js/components/login.js"></script>
-  <script defer src="/js/components/post_list.js"></script>
-  <script defer src="/js/components/post_page.js"></script>
-  <script defer src="/js/components/profile.js"></script>
-  <script defer src="/js/components/logout.js"></script>
-  <script defer src="/js/components/header.js"></script>
-  <script defer src="/js/initialize.js"></script>
+    <!-- JS links -->
+    <script defer src="/js/components/sign_up.js"></script>
+    <script defer src="/js/components/login.js"></script>
+    <script defer src="/js/components/post_list.js"></script>
+    <script defer src="/js/components/post_page.js"></script>
+    <script defer src="/js/components/profile.js"></script>
+    <script defer src="/js/components/logout.js"></script>
+    <script defer src="/js/components/header.js"></script>
+    <script defer src="/js/initialize.js"></script>
+  </head>
+  <body>
+    <h1>Social Media App</h1>
 
-</head>
-<body>
-  <h1>Social Media App</h1>
+    <ul>
+      <li class="" onClick="renderSignUp()">Sign Up</li>
+      <li class="" onClick="renderLogin()">Log in</li>
+    </ul>
 
-  <ul>
-    <li class="" onClick="renderSignUp()">Sign Up</li>
-    <li class="" onClick="renderLogin()">Log in</li>
-  </ul>
+    <!-- <button onclick="header()"></button> -->
+    <nav class="side-nav"></nav>
+    <!-- <li onclick="logOut()">Log out</li> -->
 
-<!-- <button onclick="header()"></button> -->
-  <nav class="side-nav">
-  
-  </nav>
-  <!-- <li onclick="logOut()">Log out</li> -->
-  
-  <main id="page" class="content"></main>
-  
-</body>
+    <main id="page" class="content"></main>
+  </body>
 </html>
