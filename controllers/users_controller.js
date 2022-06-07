@@ -13,7 +13,7 @@ router.post("/", (req, res) => {
     null
   );
 
-  if (name.length < 8) {
+  if (name.length < 2) {
     res.status(400).json({ error: "name shoud be at least 8 characters" });
   } else {
     User.create(avatar, name, email, user_type, passwordDigest, about_you).then(
