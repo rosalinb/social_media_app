@@ -6,8 +6,7 @@ function header() {
         <li class="" onClick="renderProfilePage()">Your Profile</li>
         <li class="" onClick="renderSearchPage()">Search</li>
         <li class="" onClick="renderPostPage()">Post!</li>
-        <li class="" onClick="renderSignUp()">Sign Up</li>
-        <li class="" onClick="renderLogin()">Log in</li>
+          <li onclick="logOut()">Log out</li>      
     </ul>
     `;
   } else {

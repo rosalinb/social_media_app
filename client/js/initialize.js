@@ -10,6 +10,7 @@ const state = {
 //     renderProfile();
 //   });
 
+
 fetch('/api/posts')
   .then((res) => res.json())
   .then((posts) => {
@@ -17,3 +18,4 @@ fetch('/api/posts')
     renderPostList();
     header();
   });
+
