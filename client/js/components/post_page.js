@@ -8,21 +8,21 @@ function renderPostPage() {
         <button>Post</button>
       </form>
     </section>
-  `
+  `;
 }
 
 function createPost(event) {
-  event.preventDefault()
-  const form = event.target
-  const data = Object.fromEntries(new FormData(form))
+  event.preventDefault();
+  const form = event.target;
+  const data = Object.fromEntries(new FormData(form));
   fetch('/api/posts', {
     method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(data)
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
   })
-    .then(res => res.json())
-    .then(post => {
-      state.posts.push(post)
-      renderPostsList()
-    })
+    .then((res) => res.json())
+    .then((post) => {
+      state.posts.push(post);
+      renderPostsList();
+    });
 }

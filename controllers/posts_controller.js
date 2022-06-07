@@ -1,8 +1,9 @@
-const express = require('express')
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
 // models
-const Post = require('../models/post')
+const Post = require("../models/post");
+
 
 router.post('/', (req, res) => {
   const name = req.body.name
@@ -14,6 +15,11 @@ router.post('/', (req, res) => {
     .then(post => res.json(post))
 })
 
+router.get("/", (req, res) => {
+  Post.findAll().then((posts) => res.json(posts));
+});
+
+
 // router.delete('/:id', (req, res) => {
 //   const postId = req.params.id
 
@@ -22,4 +28,6 @@ router.post('/', (req, res) => {
 //     .then(() => res.json({message: 'deleted successfully'}))
 // })
 
+
 module.exports = router
+

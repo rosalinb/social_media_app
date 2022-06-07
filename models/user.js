@@ -20,6 +20,11 @@ const User = {
       .query(sql, [avatar, name, email, user_type, passwordDigest, about_you])
       .then((dbRes) => dbRes.rows[0].name);
   },
+
+  // findUserById: (id) => {
+  //   const sql = `SELECT * FROM users WHERE id = $1`;
+  //   return db.query(sql, [id]).then((dbRes) => dbRes.row[0]);
+  // },
 };
 
 module.exports = User;
