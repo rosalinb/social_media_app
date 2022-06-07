@@ -1,7 +1,7 @@
 function renderSignUp() {
   document.querySelector("#page").innerHTML = `
     <section class="sign-up-form">
-      <form onSubmit="singUp(event)">
+      <form onSubmit="signUp(event)">
         <h2>The more we care, we share!</h2>
         <h3>Tweeter</h3>
 
@@ -21,7 +21,7 @@ function renderSignUp() {
   `;
 }
 
-function singUp(event) {
+function signUp(event) {
   event.preventDefault();
   const form = event.target;
   const data = Object.fromEntries(new FormData(form));

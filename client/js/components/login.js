@@ -26,5 +26,7 @@ function login(event) {
   })
     .then((res) => res.json())
     .then((userName) => (state.loggedInUserName = userName))
-    .then(() => renderPostList());
+    .then(() => {
+      header();
+    });
 }

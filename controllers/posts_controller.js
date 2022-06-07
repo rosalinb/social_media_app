@@ -1,14 +1,12 @@
-const express = require('express')
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
 // models
-const Post = require('../models/post')
+const Post = require("../models/post");
 
-router.get('/', (req, res) => {
-  Post
-  .findAll()
-  .then(posts => res.json(posts))
-})
+router.get("/", (req, res) => {
+  Post.findAll().then((posts) => res.json(posts));
+});
 
 // router.post('/', (req, res) => {
 //   const name = req.body.name
@@ -28,4 +26,4 @@ router.get('/', (req, res) => {
 //     .then(() => res.json({message: 'deleted successfully'}))
 // })
 
-// module.exports = router
+// module.exports = router;
