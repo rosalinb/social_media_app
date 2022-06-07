@@ -16,4 +16,10 @@ router.post("/", (req, res) => {
     }
   });
 });
+
+router.delete("/", (req, res) => {
+  req.session.userId = undefined;
+  res.json({ message: "logout successfully" });
+});
+
 module.exports = router;
