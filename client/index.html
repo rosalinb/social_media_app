@@ -9,17 +9,21 @@
   <script defer src="/js/components/sign_up.js"></script>
   <script defer src="/js/components/login.js"></script>
   <script defer src="/js/components/post_list.js"></script>
+
+  <link rel="stylesheet" href="/client/css/nav">
 </head>
 <body>
   <h1>Social Media App</h1>
 
-  <nav class="header-nav">
+  <nav class="side-nav">
     <ul>
-
-      <!-- <li class="" onClick="renderAddPost()">add_circle</li>
-      <li class=""  onClick="renderPostList()">edit</li> -->
-      <li class=""  onClick="renderSignUp()">person_add</li>
-      <li class=""  onClick="renderLogin()">login</li>
+      <li class="" onClick="renderHomePage()">Home</li>
+      <li class="" onClick="renderProfilePage()">Your Profile</li>
+      <li class="" onClick="renderSearchPage()">Search</li>
+      <li class="" onClick="renderPostPage()">Post!</li>
+      <li class="" onClick="renderSignUp()">Sign Up</li>
+      <li class="" onClick="renderLogin()">Log in</li>
+      <li class="" onClick="renderLogout()">Log out</li>
     </ul>
   </nav>
   
