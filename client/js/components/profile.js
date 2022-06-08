@@ -1,6 +1,34 @@
 // render functions for profile page
 
+const { post } = require('../../../controllers/profiles_controller');
+
 // renders own posts
+
+function renderProfilePage() {
+  // fetch('/api/profiles')
+  //   .then((res) => res.json())
+  //   .then((ownPosts) => {
+  //     let ownPosts = ownPosts;
+  //     // renderProfilePage();
+  //   });
+  if (state.loggedInUserName.avatar !== '') {
+    document.querySelector('.entry-page-container').innerHTML = `
+      <img class="avatar-mini" src="${state.loggedInUserName.avatar}" alt="User's avatar">
+      <h2>Welcome ${state.loggedInUserName.userName}! This is your profile page</h2>
+      <h3>About you:</h3>
+      <p>${state.loggedInUserName.about_you}</p>  
+      <button onclick="renderProfileDetailsChange()">Edit my details</button>
+      <section id="own-posts"></section>`;
+  } else {
+    document.querySelector('.entry-page-container').innerHTML = `
+      <span class="avatar-mini" onclick="renderProfileDetailsChange()">Update your Avatar!</span>
+      <h2>Welcome ${state.loggedInUserName.userName}! This is your profile page</h2>
+      <h3>About you:</h3>
+      <p>${state.loggedInUserName.about_you}</p> if you want to change your details:, <button onclick="renderProfileDetailsChange()">Edit my details</button>
+      <section id="own-posts"></section>`;
+  }
+  renderOwnPosts();
+}
 
 function renderProfileDetailsChange() {
   document.querySelector('#own-posts').innerHTML = `
@@ -8,7 +36,7 @@ function renderProfileDetailsChange() {
     <section class="changeUserDetails">
       <form onSubmit="changeProfileDetails(event)">
         <input type="text" name="name" value="${state.loggedInUserName.userName}" readonly>
-        <input type="text" name="email" value="Email" readonly>
+        <input type="text" name="email" value="${state.loggedInUserName.email}" readonly>
         <input type="text" name="avatar" placeholder="Upload your avatar">   
         <textarea rows="4" cols="16" name="about_you" placeholder="Tell us about you in 240 characters" maxlength="240"></textarea>
         <button>Change details</button>
@@ -27,29 +55,34 @@ function changeProfileDetails(event) {
     body: JSON.stringify(data),
   })
     .then((res) => res.json())
-    .then((profile) => {
-      state.loggedInUserName = profile;
+    .then(({ avatar, about_you }) => {
+      state.loggedInUserName.avatar = avatar;
+      state.loggedInUserName.about_you = about_you;
     })
     .then(() => renderProfilePage());
 }
 
-function renderProfilePage() {
-  document.querySelector('.entry-page-container').innerHTML = `
-    <h2>Welcome ${state.loggedInUserName.userName}! This is your profile page</h2>
-    <h3>here goes your information, if you want to change your details, <span onclick="renderProfileDetailsChange()">click here</span></h3>
-    <section id="own-posts"></section>
-
-    `; // <p>Test area: avatar: ${profile.avatar} id: ${profile.id}, about_you: ${profile.about_you} </p>
-  // `';
-  renderOwnPosts();
-}
 function renderOwnPosts() {
+  const postsById = state.posts.filter(
+    (element) => element.poster_user_id == state.loggedInUserName.userId
+  );
   document.querySelector('#own-posts').innerHTML = `
-    <h2>These are ALL THE POSTS, WE NEED TO FILTER THEM BY USER posts</h2>
-    <section>
-    ${renderPostsList()}
-   
+    <h2>See your past activity</h2>
+    <section><p>Hola</p>
+    ${postsById[0].post}
     </section>
   `;
 }
-// ${renderPosts()} goes in renderOwnPosts when fixed
+////// THIS FUNCTION NEEDS SOME TWEAKING
+
+// function renderOwns() {
+
+//   return postsById;
+// }
+//
+post = [
+  { id: 6, poster_id: '3', post: 'hola que tal' },
+  { id: 3, poster_id: '3', post: 'hola3 que tal2' },
+  { id: 4, poster_id: '2', post: 'hola2 que tal2' },
+  { id: 5, poster_id: '3', post: 'hola3 3que tal5' },
+];

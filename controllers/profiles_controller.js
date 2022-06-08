@@ -34,6 +34,12 @@ router.put('/', (req, res) => {
 });
 // };
 
+router.get('/', (req, res) => {
+  Profile.listOwnPosts(req.session.userId).then((ownPosts) =>
+    res.json(ownPosts)
+  );
+});
+
 // router.delete('/api/profiles/:id');
 
 module.exports = router;
