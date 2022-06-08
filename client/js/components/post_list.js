@@ -23,6 +23,7 @@ function renderHomePage() {
       <p>${post.post}</p>
       <p>${post.attachment}</p>
       <span class="" onClick="likePost(event)">Like</span>
+      <span class="" onClick="commentPost(event)">Comment</span>
     </section>
   `
     )
