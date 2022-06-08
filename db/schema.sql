@@ -27,5 +27,6 @@ CREATE TABLE likes(
 CREATE TABLE comments(
   id SERIAL PRIMARY KEY,
   post_id TEXT,
+  commenter_id TEXT,
   comments TEXT
 );
