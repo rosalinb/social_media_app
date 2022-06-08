@@ -9,6 +9,7 @@ const postsController = require('./controllers/posts_controller');
 const usersController = require('./controllers/users_controller');
 const sessionsController = require('./controllers/sessions_controller');
 const profilesController = require('./controllers/profiles_controller');
+const likesController = require('./controllers/likes_controller');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -28,3 +29,4 @@ app.use('/api/posts', postsController);
 app.use('/api/users', usersController);
 app.use('/api/sessions', sessionsController);
 app.use('/api/profiles', profilesController);
+app.use('/api/likes', likesController);
