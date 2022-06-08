@@ -1,3 +1,5 @@
+header()
+
 function renderPostsList() {
   document.querySelector('#page').innerHTML = `
     <h2>Welcome to the Social Media App</h2>
@@ -5,9 +7,6 @@ function renderPostsList() {
       ${renderHomePage()}
     </section>
   `;
-}
-
-  renderHomePage()
 }
 
 function renderHomePage() {
