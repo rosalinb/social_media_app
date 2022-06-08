@@ -3,7 +3,7 @@ function renderLogin() {
     <section class="login-form">
       <form onSubmit="login(event)">
         <h2>Tweeter</h2>
-
+          
           <input type="text" name="email" placeholder="Email/username:">
           <input type="password" name="password" placeholder="Password:">
           <p id='error'></p>
