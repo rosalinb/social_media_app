@@ -1,5 +1,5 @@
 function renderPostPage() {
-  document.querySelector('#page').innerHTML = `
+  document.querySelector("#page").innerHTML = `
     <section>
       <form onSubmit="createPost(event)">
         <p>${state.loggedInUserName.userName}</p>
@@ -8,6 +8,7 @@ function renderPostPage() {
         <button>Post</button>
       </form>
     </section>
+    <li onclick="renderUserHomePage()">go back to user's home page</li>
   `;
 }
 
@@ -15,9 +16,9 @@ function createPost(event) {
   event.preventDefault();
   const form = event.target;
   const data = Object.fromEntries(new FormData(form));
-  fetch('/api/posts', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+  fetch("/api/posts", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   })
     .then((res) => res.json())
