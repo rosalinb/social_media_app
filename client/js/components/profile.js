@@ -28,7 +28,7 @@ function changeProfileDetails(event) {
   })
     .then((res) => res.json())
     .then((profile) => {
-      state.profile = profile;
+      state.loggedInUserName = profile;
     })
     .then(() => renderProfilePage());
 }
