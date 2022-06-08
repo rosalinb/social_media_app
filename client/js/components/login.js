@@ -29,4 +29,20 @@ function login(event) {
     .then((res) => res.json())
     .then((userName) => (state.loggedInUserName = userName))
     .then(() => renderUserHomePage());
+
+  // fetch("/api/posts")
+  //   .then((res) => res.json())
+  //   .then((posts) => {
+  //     state.posts = posts;
+  //     // renderPostsList();
+  //     // header();
+  //   });
+
+  // fetch("/api/profiles")
+  //   .then((res) => res.json())
+  //   .then((profile) => {
+  //     console.log(profile);
+  //     state.profile = profile;
+  //     // renderProfilePage();
+  //   });
 }
