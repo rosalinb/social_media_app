@@ -7,14 +7,8 @@ function renderSignUp() {
         <h3>Tweeter</h3>
           <div>
             <input type="text" name="avatar" placeholder="Upload your avatar">  
-          </div>
-          <div>
             <input type="text" name="name" placeholder="Enter your name">
-          </div> 
-          <div>
             <input type="text" name="email" placeholder="Email">
-          </div>
-          <div>
             <input type="hidden" name="user_type" value="user">
           </div>
           <div>

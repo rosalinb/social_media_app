@@ -1,13 +1,13 @@
-.sign-up-form {
+.sign-up-form, .login-form {
         text-align: center;
         margin: 50px;
 }
 
-.sign-up-form form div{
+.sign-up-form form div, .login-form form div{
     margin: 30px;
 }
 
-.sign-up-form form input {
+.sign-up-form form input, .login-form form input {
     padding: 10px 15px;
     width: 250px;
     border-color: #1D9BF0;
