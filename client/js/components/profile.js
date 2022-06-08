@@ -1,16 +1,4 @@
-// render functions for profile page
-
-const { post } = require('../../../controllers/profiles_controller');
-
-// renders own posts
-
 function renderProfilePage() {
-  // fetch('/api/profiles')
-  //   .then((res) => res.json())
-  //   .then((ownPosts) => {
-  //     let ownPosts = ownPosts;
-  //     // renderProfilePage();
-  //   });
   if (state.loggedInUserName.avatar !== '') {
     document.querySelector('.entry-page-container').innerHTML = `
       <img class="avatar-mini" src="${state.loggedInUserName.avatar}" alt="User's avatar">
@@ -80,9 +68,9 @@ function renderOwnPosts() {
 //   return postsById;
 // }
 //
-post = [
-  { id: 6, poster_id: '3', post: 'hola que tal' },
-  { id: 3, poster_id: '3', post: 'hola3 que tal2' },
-  { id: 4, poster_id: '2', post: 'hola2 que tal2' },
-  { id: 5, poster_id: '3', post: 'hola3 3que tal5' },
-];
+// post = [
+//   { id: 6, poster_id: '3', post: 'hola que tal' },
+//   { id: 3, poster_id: '3', post: 'hola3 que tal2' },
+//   { id: 4, poster_id: '2', post: 'hola2 que tal2' },
+//   { id: 5, poster_id: '3', post: 'hola3 3que tal5' },
+// ];
