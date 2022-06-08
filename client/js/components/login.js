@@ -1,6 +1,6 @@
 function renderLogin() {
-  document.querySelector('#page').innerHTML = `
-    <section class="login">
+  document.querySelector(".entry-page-container").innerHTML = `
+    <section class="login-form">
       <form onSubmit="login(event)">
         <h2>Tweeter</h2>
 
@@ -21,9 +21,9 @@ function login(event) {
   const form = event.target;
   const data = Object.fromEntries(new FormData(form));
 
-  fetch('/api/sessions', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+  fetch("/api/sessions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   })
     .then((res) => res.json())

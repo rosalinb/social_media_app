@@ -8,7 +8,7 @@ function renderUserHomePage() {
      <h1>${navBar}</h1>
      <section class="entry-page-container">
 
-  <h1>${renderHomePage()}</h1>
+  <h1>${renderPostsList()}</h1>
   </section>`;
   }
 }

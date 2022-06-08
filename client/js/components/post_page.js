@@ -1,5 +1,5 @@
 function renderPostPage() {
-  document.querySelector("#page").innerHTML = `
+  document.querySelector(".entry-page-container").innerHTML = `
     <section>
       <form onSubmit="createPost(event)">
         <p>${state.loggedInUserName.userName}</p>
@@ -8,7 +8,6 @@ function renderPostPage() {
         <button>Post</button>
       </form>
     </section>
-    <li onclick="renderUserHomePage()">go back to user's home page</li>
   `;
 }
 
@@ -23,7 +22,7 @@ function createPost(event) {
   })
     .then((res) => res.json())
     .then((post) => {
-      state.posts.push(post);
-      renderPostsList();
+      state.posts.unshift(post);
+      renderUserHomePage();
     });
 }
