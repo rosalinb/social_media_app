@@ -8,12 +8,11 @@ function renderAppHome() {
       <img class="hero-image" src="" alt="hero image">
   </section>
 
-  <section class="entry-page-container">
-      <div class="logo-header">
+    <section class="entry-page-container">
 
+      <div class="logo-header">
         <img  class="logo" src=""alt="image">
         <h1>Tweeter</h1>
-
       </div>
 
       <h2>Take a sneak peek at what's happening around the world.</h2>

@@ -1,11 +1,11 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+
 .entry-page-wrapper{
     display: flex;
     justify-content: space-between;
-    gap: 2vw;
-    
+    gap: 2vw;    
 }
 
 .hero-image-container  {

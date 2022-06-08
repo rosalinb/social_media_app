@@ -20,8 +20,9 @@ router.post("/", (req, res) => {
 });
 
 router.delete("/", (req, res) => {
-  req.session.destroy();
-  res.clearCookie("user_sid");
+  req.session.userId = undefined;
+  // req.session.destroy();
+  // res.clearCookie("user_sid");
   res.json({ message: "logout successfully" });
 });
 
