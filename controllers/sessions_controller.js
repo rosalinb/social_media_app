@@ -13,15 +13,16 @@ router.post("/", (req, res) => {
     if (user && isValidPassword) {
       req.session.userId = user.id;
       res.json({ userName: user.name });
+    } else {
+      res.json({ error: "Incorrect username or password" });
     }
   });
 });
 
 router.delete("/", (req, res) => {
-  req.session.userId = undefined;
+  req.session.destroy();
+  res.clearCookie("user_sid");
   res.json({ message: "logout successfully" });
 });
 
 module.exports = router;
-
-
