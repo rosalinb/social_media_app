@@ -18,4 +18,6 @@ fetch("/api/posts")
     header();
   });
 
+//fetch API request to server, get responsed by the session cookie and save that to the browser and save it to the local storage.
+
 renderAppHome();
