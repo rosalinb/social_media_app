@@ -13,17 +13,18 @@ router.get('/', (req, res) => {
 });
 
 // })
-router.put('/:id'),
-  (req, res) => {
-    // if (req.session.userId === state.loggedInUserName.userName) {
-    const avatar = req.body.avatar;
-    const about_you = req.body.about_you;
-    const id = req.session.userId;
+router.put('/', (req, res) => {
+  // if (req.session.userId === state.loggedInUserName.userName) {
+  const avatar = req.body.avatar;
+  const about_you = req.body.about_you;
+  const id = req.session.userId;
 
-    Put.changeDetails(avatar, about_you, id).then((put) => res.json(put));
-    // } else {
-    // console.log('you are attemtping to change another user... and thats wrong');
-  };
+  Profile.changeDetails(avatar, about_you, id).then(({ avatar, about_you }) =>
+    res.json({ avatar, about_you })
+  );
+  // } else {
+  // console.log('you are attemtping to change another user... and thats wrong');
+});
 // };
 
 // router.delete('/api/profiles/:id');
