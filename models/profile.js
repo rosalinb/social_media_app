@@ -1,7 +1,4 @@
-//this page regulates the functions used in profiles_controller
 const db = require('../db/db');
-
-// need to be fed with the session.id to find the user data, render it and
 
 const Profile = {
   getProfileInfo: (id) => {
@@ -20,6 +17,11 @@ const Profile = {
     return db
       .query(sql, [avatar, about_you, id])
       .then((dbRes) => dbRes.rows[0]);
+  },
+
+  listOwnPosts: (userId) => {
+    const sql = 'SELECT post, attachment FROM posts WHERE poster_user_id = $1';
+    return db.query(sql, [userId]).then((dbRes) => dbRes.rows);
   },
 };
 // const User = {
