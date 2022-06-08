@@ -5,6 +5,8 @@ function logOut() {
     body: JSON.stringify(),
   }).then((req, res) => {
     state.loggedInUserName = undefined;
+    state.profile = [];
+    state.posts = [];
     renderAppHome();
   });
 }
