@@ -5,8 +5,9 @@ const db = require('../db/db');
 
 const Profile = {
   getProfileInfo: (id) => {
-    const sql = 'SELECT avatar, name, email, about_you FROM users WHERE $1';
-    return db.query(sql, [id]).then((dbRes) => dbRes.rows)[0];
+    const sql =
+      'SELECT avatar, name, email, about_you FROM users WHERE id = $1';
+    return db.query(sql, [id]).then((dbRes) => dbRes.rows[0]);
   },
 
   changeDetails: (avatar, about_you, id) => {
