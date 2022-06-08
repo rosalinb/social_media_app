@@ -47,7 +47,7 @@ function renderOwnPosts() {
   document.querySelector('#own-posts').innerHTML = `
     <h2>These are ALL THE POSTS, WE NEED TO FILTER THEM BY USER posts</h2>
     <section>
-    ${renderPostList()}
+    ${renderPostsList()}
    
     </section>
   `;
