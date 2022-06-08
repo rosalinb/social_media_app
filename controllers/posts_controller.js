@@ -14,9 +14,13 @@ router.post('/', (req, res) => {
     .then(post => res.json(post))
 })
 
-// router.get("/", (req, res) => {
-//   Post.findAll().then((posts) => res.json(posts));
-// });
+
+router.get("/", (req, res) => {
+  Post
+  .findAll()
+  .then((posts) => res.json(posts));
+});
+
 
 
 // router.delete('/:id', (req, res) => {

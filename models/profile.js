@@ -8,6 +8,18 @@ const Profile = {
     const sql = 'SELECT avatar, name, email, about_you FROM users WHERE $1';
     return db.query(sql, [id]).then((dbRes) => dbRes.rows)[0];
   },
+
+  changeDetails: (avatar, about_you, id) => {
+    const sql = `
+      UPDATE users
+      SET avatar = $1, about_you = $2
+      WHERE id = $3
+      RETURNING *
+    `;
+    return db
+      .query(sql, [avatar, about_you, id])
+      .then((dbRes) => dbRes.rows[0]);
+  },
 };
 // const User = {
 //   user: user.id,
