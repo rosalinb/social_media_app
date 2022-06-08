@@ -3,7 +3,7 @@
 // renders own posts
 
 function renderProfileDetailsChange() {
-  document.querySelector('#own-posts').innerHTML = `
+  document.querySelector("#own-posts").innerHTML = `
     <h2>change details</h2>
     <section class="changeUserDetails">
       <form onSubmit="changeProfileDetails(event)">
@@ -21,9 +21,9 @@ function changeProfileDetails(event) {
   event.preventDefault();
   const form = event.target;
   const data = Object.fromEntries(new FormData(form));
-  fetch('/api/profiles', {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
+  fetch("/api/profiles", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   })
     .then((res) => res.json())
@@ -34,18 +34,17 @@ function changeProfileDetails(event) {
 }
 
 function renderProfilePage() {
-  document.querySelector('#page').innerHTML = `
+  document.querySelector(".entry-page-container").innerHTML = `
     <h2>Welcome ${state.loggedInUserName.userName}! This is your profile page</h2>
     <h3>here goes your information, if you want to change your details, <span onclick="renderProfileDetailsChange()">click here</span></h3>
     <section id="own-posts"></section>
-    <li onclick="renderUserHomePage()">go back to user's home page</li>
 
     `; // <p>Test area: avatar: ${profile.avatar} id: ${profile.id}, about_you: ${profile.about_you} </p>
   // `';
   renderOwnPosts();
 }
 function renderOwnPosts() {
-  document.querySelector('#own-posts').innerHTML = `
+  document.querySelector("#own-posts").innerHTML = `
     <h2>These are ALL THE POSTS, WE NEED TO FILTER THEM BY USER posts</h2>
     <section>
     ${renderHomePage()}

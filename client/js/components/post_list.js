@@ -11,7 +11,7 @@
 //   `;
 // }
 
-function renderHomePage() {
+function renderPostsList() {
   console.log("hey");
   return state.posts
     .map(
