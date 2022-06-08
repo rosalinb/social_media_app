@@ -23,3 +23,10 @@ CREATE TABLE likes(
   post_id TEXT,
   like_user_id TEXT
 );
+
+CREATE TABLE comments(
+  id SERIAL PRIMARY KEY,
+  post_id TEXT,
+  commenter_id TEXT,
+  comments TEXT
+);

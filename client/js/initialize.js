@@ -1,21 +1,24 @@
 const state = {
   posts: [],
-  state: {},
+  profile: [],
 };
 
-// fetch("/api/profile")
-//   .then((res) => res.json())
-//   .then((profile) => {
-//     state.profile = profile;
-//     renderProfile();
-//   });
-
+fetch('/api/profiles')
+  .then((res) => res.json())
+  .then((profile) => {
+    state.profile = profile;
+    // renderProfilePage();
+  });
 
 fetch('/api/posts')
   .then((res) => res.json())
   .then((posts) => {
+    // state.loggedInUserName ? (state.posts = posts) : (state.posts = []);
     state.posts = posts;
-    renderPostList();
-    header();
+    // renderPostsList();
+    // header();
   });
 
+//fetch API request to server, get responsed by the session cookie and save that to the browser and save it to the local storage.
+
+renderAppHome();

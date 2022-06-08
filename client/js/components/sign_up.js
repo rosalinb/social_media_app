@@ -1,20 +1,30 @@
 function renderSignUp() {
-  document.querySelector("#page").innerHTML = `
+  pageSection = document.querySelector(".entry-page-container");
+  pageSection.innerHTML = `
     <section class="sign-up-form">
       <form onSubmit="signUp(event)">
         <h2>The more we care, we share!</h2>
         <h3>Tweeter</h3>
-
-          <input type="text" name="avatar" placeholder="Upload your avatar">   
-          <input type="text" name="name" placeholder="Enter your name">
-          <input type="text" name="email" placeholder="Email">
-          <input type="hidden" name="user_type" value="user">
-          <input type="password" name="password" placeholder="password">
+          <div>
+            <input type="text" name="avatar" placeholder="Upload your avatar">  
+          </div>
+          <div>
+            <input type="text" name="name" placeholder="Enter your name">
+          </div> 
+          <div>
+            <input type="text" name="email" placeholder="Email">
+          </div>
+          <div>
+            <input type="hidden" name="user_type" value="user">
+          </div>
+          <div>
+            <input type="password" name="password" placeholder="password">
+          </div>
  
-        <button>Sign Up</button>
+        <button class="button"><span>Sign Up</span></button>
       </form>
 
-      <p>Already have an account?<span><li class=""onClick="renderLogin()">login</li>
+      <p>Already have an account?<span><button class="button" onClick="renderLogin()">Login</button>
       </span></p>
 
     </section>
@@ -36,7 +46,7 @@ function signUp(event) {
         console.log(res.error);
       } else {
         state.loggedInUserName = res;
-        renderPostList();
+        renderAppHome();
       }
     });
 }
