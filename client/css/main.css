@@ -1,11 +1,11 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+
 .entry-page-wrapper{
     display: flex;
     justify-content: space-between;
-    gap: 2vw;
-    
+    gap: 2vw;    
 }
 
 .hero-image-container  {
@@ -24,8 +24,9 @@ body{
 
 .entry-page-container {
     border: 2px solid red;
-    width:40vw;
+    width:max-content;
     margin: 50px 50px;
+
 }
 
 .logo {

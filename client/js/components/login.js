@@ -1,6 +1,6 @@
 function renderLogin() {
-  document.querySelector("#page").innerHTML = `
-    <section class="login">
+  document.querySelector(".entry-page-container").innerHTML = `
+    <section class="login-form">
       <form onSubmit="login(event)">
         <h2>Tweeter</h2>
 

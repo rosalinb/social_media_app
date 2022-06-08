@@ -1,6 +1,6 @@
 function renderSignUp() {
-  page = document.querySelector("#page");
-  page.innerHTML = `
+  pageSection = document.querySelector(".entry-page-container");
+  pageSection.innerHTML = `
     <section class="sign-up-form">
       <form onSubmit="signUp(event)">
         <h2>The more we care, we share!</h2>
@@ -46,7 +46,7 @@ function signUp(event) {
         console.log(res.error);
       } else {
         state.loggedInUserName = res;
-        renderPostsList();
+        renderAppHome();
       }
     });
 }

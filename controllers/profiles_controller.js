@@ -7,10 +7,17 @@ const router = express.Router();
 const Profile = require('../models/profile');
 
 router.get('/', (req, res) => {
-  Profile.getProfileInfo(req.session.userId).then((res) =>
-    res.json(res).then((res) => (state.profile = res))
+  Profile.getProfileInfo(req.session.userId).then((profile) =>
+    res.json(profile)
   );
 });
+
+// state.loggedInUserName = res;
+//     avatar, name, email, about_you }) =>
+//     res.json({ avatar, name, email, about_you })
+//   );
+//   // .then((profile) => (state.profile = profile));
+// });
 
 // })
 router.put('/', (req, res) => {
