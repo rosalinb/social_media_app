@@ -24,8 +24,9 @@ body{
 
 .entry-page-container {
     border: 2px solid red;
-    width:40vw;
+    width:max-content;
     margin: 50px 50px;
+
 }
 
 .logo {
