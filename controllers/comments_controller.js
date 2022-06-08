@@ -10,5 +10,4 @@ router.post('/', (req, res) => {
 
     Comment
     .findPost()
-    debugger
 })
