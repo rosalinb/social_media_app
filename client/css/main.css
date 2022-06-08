@@ -4,14 +4,13 @@ body{
 
 .entry-page-wrapper{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 2vw;    
 }
 
 .hero-image-container  {
     background-color: #1D9BF0;
-    width:60vw;
-   
+   width: 70vw;
 }
 
 .hero-image {
