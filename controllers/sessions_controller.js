@@ -12,7 +12,7 @@ router.post("/", (req, res) => {
     const isValidPassword = bcrypt.compareSync(password, user.password_digest);
     if (user && isValidPassword) {
       req.session.userId = user.id;
-      res.json({ userName: user.name });
+      res.json({ userName: user.name, avatar: user.avatar, about_you: user.about_you, email: user.email });
     } else {
       res.json({ error: "Incorrect username or password" });
     }

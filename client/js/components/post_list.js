@@ -12,7 +12,6 @@
 // }
 
 function renderPostsList() {
-  console.log("hey");
   return state.posts
     .map(
       (post) => `
@@ -22,7 +21,8 @@ function renderPostsList() {
       </header>
       <p>${post.post}</p>
       <p>${post.attachment}</p>
-      <span class="" onClick="likePost(event)">Like</span>
+      <button class="" onClick="likePost(event)">Like</button>
+      <span>Num Of Likes</span>
       <span class="" onClick="commentPost(event)">Comment</span>
     </section>
   `

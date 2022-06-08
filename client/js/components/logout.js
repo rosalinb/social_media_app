@@ -4,7 +4,7 @@ function logOut() {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(),
   }).then((req, res) => {
-    state = {};
+    state.loggedInUserName = undefined;
     renderAppHome();
   });
 }
