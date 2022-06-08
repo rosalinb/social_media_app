@@ -35,8 +35,10 @@ function changeProfileDetails(event) {
 
 function renderProfilePage() {
   document.querySelector('.entry-page-container').innerHTML = `
+    <div>${state.loggedInUserName.avatar}</div>
     <h2>Welcome ${state.loggedInUserName.userName}! This is your profile page</h2>
-    <h3>here goes your information, if you want to change your details, <span onclick="renderProfileDetailsChange()">click here</span></h3>
+    <h3>About you:</h3>
+    <p>${state.loggedInUserName.about_you}</p> if you want to change your details, <button onclick="renderProfileDetailsChange()">Edit my details</button>
     <section id="own-posts"></section>
 
     `; // <p>Test area: avatar: ${profile.avatar} id: ${profile.id}, about_you: ${profile.about_you} </p>
