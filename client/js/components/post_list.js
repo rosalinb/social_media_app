@@ -12,7 +12,7 @@
 // }
 
 function renderPostsList() {
-  if (state.loggedInUserName.avatar !== "") {
+  if (state.loggedInUserName.avatar !== '') {
     return state.posts
       .map(
         (post) => `
@@ -22,8 +22,11 @@ function renderPostsList() {
           <img class="avatar-mini" src="${post.avatar}" alt="User's avatar">
           <h2>${post.name}</h2>
         </header>
+        
         <p class="p-tweets">${post.post}</p>
         <img src="${post.attachment}">
+        <p class="p-tweets">Posted on ${post.time_stamp}</p>
+        
         <form onSubmit="likePost(event)">
           <input name='post_id' value='${post.id}' type='hidden'>
           <div>
@@ -36,7 +39,7 @@ function renderPostsList() {
     </div>   
   `
       )
-      .join("");
+      .join('');
   } else {
     return state.posts
       .map(
@@ -49,6 +52,7 @@ function renderPostsList() {
         </header>
         <p class="p-tweets">${post.post}</p>
         <img src="${post.attachment}" alt="attachment"/>
+        <p class="p-tweets">Posted on ${post.time_stamp}</p>
         <form onSubmit="likePost(event)">
           <input name='post_id' value='${post.id}' type='hidden'>
           <div>
@@ -62,7 +66,7 @@ function renderPostsList() {
       </div>
       `
       )
-      .join("");
+      .join('');
   }
 }
 
@@ -71,7 +75,7 @@ function numLikesForPost(postId) {
 }
 
 function crazyfunction() {
-  fetch("/api/posts")
+  fetch('/api/posts')
     .then((res) => res.json())
     .then((posts) => {
       state.posts = posts;
