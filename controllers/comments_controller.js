@@ -4,10 +4,11 @@ const router = express.Router();
 const Comment = require("../models/comment")
 
 router.post('/', (req, res) => {
-    const post_id = req.session
-    const commenter_id = req.session.userId
-    const comment = req.body.comment
+    console.log(req)
 
     Comment
     .findPost()
 })
+
+
+module.exports = router
