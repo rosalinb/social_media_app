@@ -13,8 +13,13 @@ const Like = {
     .then(dbRes => dbRes.rows[0])
   },
 
-  allLikes: {
-}
+  allLikes: () => {
+    const sql = 'SELECT * FROM lkes'
 
+    return db
+      .query(sql)
+      .then(dbRes => dbRes.rows)
+  }
+}
 
 module.exports = Like
