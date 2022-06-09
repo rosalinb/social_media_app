@@ -16,21 +16,27 @@ function renderComments() {
         </form>
         <span>Num Of Likes</span>
         </section>
+        <section class="comment-form">
+        <form onSubmit="commentPost(event)">
+            <input name='comments' type='text'>
+            <button>Add Comment!</button>
+        </form>
+        </section>
         `
 
 }
 
-// function commentPost(event) {
-//     event.preventDefault();
-//     const form = event.target;
-//     const data= Object.fromEntries(new FormData(form));
-//     fetch('/api/comments', {
-//         method: 'POST',
-//         headers: {'Content-Type': 'application/json'},
-//         body:  JSON.stringify(data),
-//     })
-//     .then((res) => res.json())
-//     .then((comment) => {
-//         console.log(res)
-//     })
-// }
+function commentPost(event) {
+    event.preventDefault();
+    const form = event.target;
+    const data= Object.fromEntries(new FormData(form));
+    fetch('/api/comments', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body:  JSON.stringify(data),
+    })
+    .then((res) => res.json())
+    .then((comment) => {
+        console.log(res)
+    })
+}
