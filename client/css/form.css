@@ -1,63 +1,73 @@
-.sign-up-form, .login-form {
+ .sign-up-form, .login-form {
         text-align: center;
         margin: 50px;
 }
 
 .sign-up-form form div, .login-form form div{
-    margin: 30px;
+    margin: 20px;
 }
 
 .sign-up-form form input, .login-form form input {
-    padding: 10px 15px;
-    /* width: 250px; */
+    padding: 10px 65px;
     border-color: #1D9BF0;
     border-radius: 5px;
 }
 
 .sign-up-form h2 h3{
     color: #1D9BF0;
-}
+} 
 
-/* .sign-up-form  */
 
-.button {
+.sigup-form-button {
+    display: inline-block;
     border-radius: 4px;
-    background-color:  #1D9BF0;
+    background-color:#1D9BF0;
     border: none;
     color: #FFFFFF;
     text-align: center;
-    font-size: 24px;
-    padding: 15px 25px;    
-    /* width: 200px; */
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
-    
+  }
 
-}
-.button span {
+.sigup-form-button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
-} 
-.button span:after {
+  }
+  
+  .sigup-form-button span:after {
     content: '\00bb';
     position: absolute;
     opacity: 0;
     top: 0;
     right: -20px;
     transition: 0.5s;
-}
- 
-.button:hover span {
+  }
+  
+  .sigup-form-button:hover span {
     padding-right: 25px;
-}
-
-.button:hover span:after {
+  }
+  
+  .sigup-form-button:hover span:after {
     opacity: 1;
     right: 0;
-}
+  }
+
+  .entrypage-login-button{
+      background-color: #1D9BF0;
+      color:white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+  }
+
+
+  
 
 
 
