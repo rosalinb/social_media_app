@@ -14,11 +14,11 @@ const Like = {
   },
 
   allLikes: () => {
-    const sql = 'SELECT * FROM lkes'
+    const sql = 'SELECT post_id FROM likes'
 
     return db
       .query(sql)
-      .then(dbRes => dbRes.rows)
+      .then(dbRes => dbRes.rows.map(like => like.post_id))
   }
 }
 

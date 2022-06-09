@@ -1,14 +1,18 @@
 function renderPostPage() {
+  var localTime = new Date().toLocaleTimeString()
   document.querySelector(".entry-page-container").innerHTML = `
     <section>
       <form onSubmit="createPost(event)">
         <p>${state.loggedInUserName.userName}</p>
-        <textarea name='post' rows='4' cols='50' placeholder='Whats's happening?'></textarea>
-        <input>Attachment</input>
+        <label>What's happening?</label>
+        <textarea name='post' rows='4' cols='50'></textarea>
+        <input text="hidden" name="localtime">${localTime}</input>
+        <input name="attachment">Attachment</input>
         <button>Post</button>
       </form>
     </section>
   `;
+  
 }
 
 function createPost(event) {

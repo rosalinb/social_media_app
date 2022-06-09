@@ -19,13 +19,13 @@ function renderPostsList() {
    
     <section class='post' data-id='${post.id}'>
       <header>
-        <h2>${state.loggedInUserName.userName}</h2>
+        <h2>${post.name}</h2>
         <img class="avatar-mini" src="${
-          state.loggedInUserName.avatar
+          post.avatar
         }" alt="User's avatar">
       </header>
       <p>${post.post}</p>
-      <p>${post.attachment}</p>
+      <img src="${post.attachment}">
       <form onSubmit="likePost(event)">
         <input name='post_id' value='${post.id}' type='hidden'>
         <button>Like</button>
@@ -44,7 +44,7 @@ function renderPostsList() {
         (post) => `
       <section class='post' data-id='${post.id}'>
         <header>
-          <h2>${state.loggedInUserName.userName}</h2>
+          <h2>${post.name}</h2>
           <span class="avatar-mini" onclick="renderProfileDetailsChange()">Update your Avatar!</span>
         </header>
         <p>${post.post}</p>

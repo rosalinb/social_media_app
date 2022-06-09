@@ -1,4 +1,5 @@
 function likePost(event) {
+  console.log('pls work')
   event.preventDefault()
   const form = event.target
   const data = Object.fromEntries(new FormData(form));
