@@ -1,5 +1,6 @@
 const state = {
   posts: [],
+  likesArray: []
   // ownPosts: [],
 };
 

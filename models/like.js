@@ -11,6 +11,14 @@ const Like = {
     return db
     .query(sql, [post_id, like_user_id])
     .then(dbRes => dbRes.rows[0])
+  },
+
+  allLikes: () => {
+    const sql = 'SELECT * FROM lkes'
+
+    return db
+      .query(sql)
+      .then(dbRes => dbRes.rows)
   }
 }
 

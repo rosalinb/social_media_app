@@ -14,4 +14,10 @@ router.post('/', (req, res) => {
     .then(like => res.json(like))
 })
 
+router.get("/", (req, res) => {
+  Like
+  .allLikes()
+  .then((likes) => res.json(likes));
+});
+
 module.exports = router
