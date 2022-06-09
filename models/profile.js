@@ -24,12 +24,12 @@ const Profile = {
     return db.query(sql, [userId]).then((dbRes) => dbRes.rows);
   },
 
-  delete: (postId) => {
-    const sql = `
-      DELETE FROM posts WHERE id = $1
-    `;
-    return db.query(sql, [postId]);
-  },
+  // delete: (postId) => {
+  //   const sql = `
+  //     DELETE FROM posts WHERE id = $1
+  //   `;
+  //   return db.query(sql, [postId]);
+  // },
 };
 // const User = {
 //   user: user.id,

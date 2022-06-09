@@ -20,9 +20,7 @@ function renderPostsList() {
     <section class='post' data-id='${post.id}'>
       <header>
         <h2>${post.name}</h2>
-        <img class="avatar-mini" src="${
-          post.avatar
-        }" alt="User's avatar">
+        <img class="avatar-mini" src="${post.avatar}" alt="User's avatar">
       </header>
       <p>${post.post}</p>
       <img src="${post.attachment}">
@@ -65,3 +63,11 @@ function renderPostsList() {
 function numLikesForPost(postId) {
   return state.likesArray.filter((like) => Number(like) === postId).length;
 }
+
+// function crazyfunction() {
+//   fetch('/api/posts')
+//     .then((res) => res.json())
+//     .then((posts) => {
+//       state.posts = posts;
+//     });
+// }
