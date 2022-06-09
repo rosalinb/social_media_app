@@ -71,7 +71,7 @@ function renderOwnPosts() {
       <p>${post.post}</p>
       <button onClick="deleteOwnPost(event)">Retract yourself?</button>
     </section>  `
-  );
+  ).join('');
 }
 
 function deleteOwnPost(event) {

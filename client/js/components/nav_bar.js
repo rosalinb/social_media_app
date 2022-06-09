@@ -21,7 +21,6 @@ const navBar = `
       <ul>
         <li class="" onClick="renderUserHomePage()">Home</li>
         <li class="" onClick="renderProfilePage()">Your Profile</li>
-        <li class="" onClick="renderSearchPage()">Search</li>
         <li class="" onClick="renderPostPage()">Post!</li>
         <li onclick="logOut()">Log out</li>
     </ul>
