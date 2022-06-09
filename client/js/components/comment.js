@@ -3,9 +3,9 @@ function renderComments(event) {
     const commentBtn = event.target;
     const postDOM = commentBtn.closest('.post')
     const postId = postDOM.dataset.id
-    console.log(postId)
+    console.log(postId) 
 
-    let targetPost = state.posts.filter(post => post.id === postDOM)
+    let targetPost = state.posts.filter(post => post.id ===     postId)
     console.log(targetPost)
 
     page.innerHTML = `
