@@ -64,10 +64,11 @@ function numLikesForPost(postId) {
   return state.likesArray.filter((like) => Number(like) === postId).length;
 }
 
-// function crazyfunction() {
-//   fetch('/api/posts')
-//     .then((res) => res.json())
-//     .then((posts) => {
-//       state.posts = posts;
-//     });
-// }
+function crazyfunction() {
+  fetch('/api/posts')
+    .then((res) => res.json())
+    .then((posts) => {
+      state.posts = posts;
+    });
+  renderUserHomePage();
+}

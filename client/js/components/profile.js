@@ -65,13 +65,15 @@ function renderOwnPosts() {
     (element) => element.poster_user_id == state.loggedInUserName.userId
   );
   // return console.log(postsById);
-  return postsById.map(
-    (post) => `<section class="postx" data-id="${post.id}">
+  return postsById
+    .map(
+      (post) => `<section class="postx" data-id="${post.id}">
       <p class="own-post">Posted on ${new Date()}</p>
       <p>${post.post}</p>
       <button onClick="deleteOwnPost(event)">Retract yourself?</button>
     </section>  `
-  ).join('');
+    )
+    .join('');
 }
 
 function deleteOwnPost(event) {
@@ -87,7 +89,7 @@ function deleteOwnPost(event) {
   }).then(() => {
     // this is removing just that one treasure from my state.treasures
     state.posts = state.posts.filter((t) => t.id != postId);
-    renderOwnPosts();
+    renderProfilePage();
   });
 }
 ////// THIS FUNCTION NEEDS SOME TWEAKING
