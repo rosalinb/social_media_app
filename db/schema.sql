@@ -15,8 +15,7 @@ CREATE TABLE posts(
   id SERIAL PRIMARY KEY,
   poster_user_id INT,
   post TEXT,
-  attachment TEXT,
-  time_stamp TEXT
+  attachment TEXT
 );
 
 CREATE TABLE likes(
@@ -30,10 +29,14 @@ CREATE TABLE comments(
   id SERIAL PRIMARY KEY,
   post_id TEXT,
   commenter_id TEXT,
+<<<<<<< HEAD
   comments TEXT,
 <<<<<<< HEAD
   time_stamp TEXT,
 =======
   time_stamp TEXT
 >>>>>>> 1d1e1a2 (schema and profile)
+=======
+  comments TEXT
+>>>>>>> 0b2567e (rebasing)
 );

@@ -23,6 +23,12 @@ const Profile = {
     const sql = 'SELECT post, attachment FROM posts WHERE poster_user_id = $1';
     return db.query(sql, [userId]).then((dbRes) => dbRes.rows);
   },
+  delete: (treasureId) => {
+    const sql = `
+      DELETE FROM treasures WHERE id = $1
+    `;
+    return db.query(sql, [treasureId]);
+  },
 };
 // const User = {
 //   user: user.id,
