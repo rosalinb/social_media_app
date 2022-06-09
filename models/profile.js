@@ -23,11 +23,12 @@ const Profile = {
     const sql = 'SELECT post, attachment FROM posts WHERE poster_user_id = $1';
     return db.query(sql, [userId]).then((dbRes) => dbRes.rows);
   },
-  delete: (treasureId) => {
+
+  delete: (postId) => {
     const sql = `
-      DELETE FROM treasures WHERE id = $1
+      DELETE FROM posts WHERE id = $1
     `;
-    return db.query(sql, [treasureId]);
+    return db.query(sql, [postId]);
   },
 };
 // const User = {

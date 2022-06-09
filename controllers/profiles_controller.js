@@ -41,11 +41,9 @@ router.get('/', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  const ownPostId = req.params.id;
+  const postId = req.params.id;
 
-  Posts.delete(ownPostId).then(() =>
-    res.json({ message: 'delete successfully' })
-  );
+  Posts.delete(postId).then(() => res.json({ message: 'delete successfully' }));
 });
 
 // router.delete('/api/profiles/:id');
