@@ -12,7 +12,7 @@
 // }
 
 function renderPostsList() {
-  if (state.loggedInUserName.avatar !== '') {
+  if (state.loggedInUserName.avatar !== "") {
     return state.posts
       .map(
         (post) => `
@@ -20,7 +20,9 @@ function renderPostsList() {
     <section class='post' data-id='${post.id}'>
       <header>
         <h2>${state.loggedInUserName.userName}</h2>
-        <img class="avatar-mini" src="${state.loggedInUserName.avatar}" alt="User's avatar">
+        <img class="avatar-mini" src="${
+          state.loggedInUserName.avatar
+        }" alt="User's avatar">
       </header>
       <p>${post.post}</p>
       <p>${post.attachment}</p>
@@ -35,7 +37,7 @@ function renderPostsList() {
     
   `
       )
-      .join('');
+      .join("");
   } else {
     return state.posts
       .map(
@@ -46,7 +48,7 @@ function renderPostsList() {
           <span class="avatar-mini" onclick="renderProfileDetailsChange()">Update your Avatar!</span>
         </header>
         <p>${post.post}</p>
-        <p>${post.attachment}</p>
+        <img src="${post.attachment}" alt="attachment"/>
         <form onSubmit="likePost(event)">
           <input name='post_id' value='${post.id}' type='hidden'>
           <button>Like</button>
@@ -57,10 +59,10 @@ function renderPostsList() {
       </section>
       `
       )
-      .join('');
+      .join("");
   }
 }
 
 function numLikesForPost(postId) {
-  return state.likesArray.filter(like => Number(like) === postId).length
+  return state.likesArray.filter((like) => Number(like) === postId).length;
 }
