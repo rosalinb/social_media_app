@@ -1,5 +1,5 @@
 function renderPostPage() {
-  var localTime = new Date().toLocaleTimeString()
+  var localTime = new Date().toLocaleTimeString();
   document.querySelector(".entry-page-container").innerHTML = `
     <section>
       <form onSubmit="createPost(event)">
@@ -12,7 +12,6 @@ function renderPostPage() {
       </form>
     </section>
   `;
-  
 }
 
 function createPost(event) {
@@ -27,6 +26,7 @@ function createPost(event) {
     .then((res) => res.json())
     .then((post) => {
       state.posts.unshift(post);
+
       renderUserHomePage();
     });
 }
