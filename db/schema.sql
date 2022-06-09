@@ -15,8 +15,7 @@ CREATE TABLE posts(
   id SERIAL PRIMARY KEY,
   poster_user_id INT,
   post TEXT,
-  attachment TEXT,
-  time_stamp TEXT
+  attachment TEXT
 );
 
 CREATE TABLE likes(
@@ -29,7 +28,7 @@ CREATE TABLE likes(
 CREATE TABLE comments(
   id SERIAL PRIMARY KEY,
   post_id TEXT,
-  commenter_id TEXT,
+  commenter_id INT,
   comments TEXT,
-  time_stamp TEXT,
-);
+  time_stamp TEXT
+  );
