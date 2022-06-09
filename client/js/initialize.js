@@ -1,14 +1,14 @@
 const state = {
   posts: [],
-  profile: [],
+  // ownPosts: [],
 };
 
-fetch('/api/profiles')
-  .then((res) => res.json())
-  .then((profile) => {
-    state.profile = profile;
-    // renderProfilePage();
-  });
+// fetch('/api/profiles')
+//   .then((res) => res.json())
+//   .then((profile) => {
+//     state.profile = profile;
+//     // renderProfilePage();
+//   });
 
 fetch('/api/posts')
   .then((res) => res.json())

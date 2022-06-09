@@ -5,13 +5,13 @@ function renderAppHome() {
   <div class="entry-page-wrapper">
 
   <section class="hero-image-container">
-      <img class="hero-image" src= alt="hero image">
+      <img class="hero-image" src="" alt="hero image">
   </section>
 
     <section class="entry-page-container">
 
       <div class="logo-container">
-        <img  class="logo" src=""alt="image">
+        <img  class="logo" src="" alt="image">
         <h1>Tweeter</h1>
       </div>
       <div class="entry-page-info">

@@ -1,0 +1,6 @@
+.user-page-details {
+    display:flex;
+    justify-content: space-around;
+    align-content: center;
+    gap:5vw;
+}
