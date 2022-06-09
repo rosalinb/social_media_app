@@ -1,3 +1,14 @@
+fetch('/api/comments')
+.then((res) => res.json())
+.then((comments) => {
+    state.posts.comment = []
+    comments.map(comment => 
+    state.posts.comment.push(comment))
+});
+
+
+
+
 function renderComments(event) {
     const page = document.querySelector("#page");
     const commentBtn = event.target;
@@ -5,6 +16,10 @@ function renderComments(event) {
     const postId = postDOM.dataset.id
 
     let targetPost = state.posts.filter(post => Number(post.id) == postId)[0]
+
+
+
+
 
     page.innerHTML = `
         ${navBar}
@@ -23,9 +38,12 @@ function renderComments(event) {
         </section>
         <section class="comment-form">
         <form onSubmit="commentPost(event)">
+            <input name='post_id' value='${targetPost.id}' type='hidden'>
             <input name='comments' type='text'>
             <button>Add Comment!</button>
         </form>
+        </section>
+        <section class="comment-section">
         </section>
         `
 
@@ -42,6 +60,6 @@ function commentPost(event) {
     })
     .then((res) => res.json())
     .then((comment) => {
-        console.log(res)
+        console.log(comment)
     })
 }
