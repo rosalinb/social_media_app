@@ -4,7 +4,7 @@ function renderPostPage() {
       <form onSubmit="createPost(event)">
         <p>${state.loggedInUserName.userName}</p>
         <textarea name='post' rows='4' cols='50' placeholder='Whats's happening?'></textarea>
-        <span onClick="">Attachment</span>
+        <input>Attachment</input>
         <button>Post</button>
       </form>
     </section>
