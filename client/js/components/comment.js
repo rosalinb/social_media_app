@@ -1,6 +1,13 @@
-function renderComments() {
+function renderComments(event) {
     const page = document.querySelector("#page");
-    
+    const commentBtn = event.target;
+    const postDOM = commentBtn.closest('.post')
+    const postId = postDOM.dataset.id
+    console.log(postId)
+
+    let targetPost = state.posts.filter(post => post.id === postDOM)
+    console.log(targetPost)
+
     page.innerHTML = `
         ${navBar}
         <section class='post' data-id='${state.posts[0].id}'>
