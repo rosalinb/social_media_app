@@ -31,5 +31,9 @@ CREATE TABLE comments(
   post_id TEXT,
   commenter_id TEXT,
   comments TEXT,
+<<<<<<< HEAD
   time_stamp TEXT,
+=======
+  time_stamp TEXT
+>>>>>>> 1d1e1a2 (schema and profile)
 );

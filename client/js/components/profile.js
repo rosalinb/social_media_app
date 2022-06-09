@@ -65,11 +65,29 @@ function renderOwnPosts() {
   );
   // return console.log(postsById);
   return postsById.map(
-    (post) => `<p>Posted on ${new Date()}</p><p>${post.post}</p>`
+    (post) => `<p>Posted on ${new Date()}</p><p>${post.post}</p>
+    `
   );
 }
-////// THIS FUNCTION NEEDS SOME TWEAKING
 
+function deleteOwnPost(event) {
+  const deleteBtn = event.target;
+  const ownPostDOM = deleteBtn.closest('.treasure');
+  // console.log(treasureDOM) this gives me the dom object that we are manipulating (the shole section, )
+  const treasureId = treasureDOM.dataset.id;
+  //dataset.id is getting the tag data-id
+  // console.log(treasureId);
+  //this is giving me which id im clicking
+  fetch(`/api/treasures/${treasureId}`, {
+    method: 'DELETE',
+  }).then(() => {
+    // this is removing just that one treasure from my state.treasures
+    state.treasures = state.treasures.filter((t) => t.id != treasureId);
+    renderTreasureList();
+  });
+}
+////// THIS FUNCTION NEEDS SOME TWEAKING
+// var localTime = new Date().toLocaleTimeString()
 // function renderOwns() {
 
 //   return postsById;
