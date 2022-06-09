@@ -1,4 +1,5 @@
 function renderLogin() {
+  state.loggedInUserName = '';
   document.querySelector('.entry-page-container').innerHTML = `
     <section class="login-form">
       <form onSubmit="login(event)">
@@ -38,33 +39,13 @@ function login(event) {
   })
     .then((res) => res.json())
     .then((userName) => (state.loggedInUserName = userName))
-    .then(() => renderUserHomePage());
+    .then(() => {
+      if (state.loggedInUserName.error != null) {
+        const errorMessage = state.loggedInUserName.error;
+        renderLogin();
+        document.getElementById('error').innerText = errorMessage;
+      } else {
+        renderUserHomePage();
+      }
+    });
 }
-//     .then(() => {
-//       if (state.loggedInUserName == null) {
-//         renderLogin();
-//         const error = user.error;
-//         console.log(error);
-//         document.querySelector('#error').innerHTML = `<p>${error}</p>`;
-//       } else {
-//         renderUserHomePage();
-//       }
-//     });
-// }
-
-//// this funciton works
-// function login(event) {
-//   event.preventDefault();
-
-//   const form = event.target;
-//   const data = Object.fromEntries(new FormData(form));
-
-//   fetch('/api/sessions', {
-//     method: 'POST',
-//     headers: { 'Content-Type': 'application/json' },
-//     body: JSON.stringify(data),
-//   })
-//     .then((res) => res.json())
-//     .then((userName) => (state.loggedInUserName = userName))
-//     .then(() => renderUserHomePage());
-// }

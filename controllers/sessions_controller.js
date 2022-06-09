@@ -38,18 +38,23 @@ router.post('/', (req, res) => {
   const { email, password } = req.body;
 
   User.findByEmail(email).then((user) => {
-    const isValidPassword = bcrypt.compareSync(password, user.password_digest);
-    if (user && isValidPassword) {
-      req.session.userId = user.id;
-      res.json({
-        userId: user.id,
-        userName: user.name,
-        avatar: user.avatar,
-        about_you: user.about_you,
-        email: user.email,
-      });
+    if (user === undefined || password === undefined) {
+      res.json({ error: 'Please provide correct login information' });
     } else {
-      res.json(null);
+      const isValidPassword = bcrypt.compareSync(
+        password,
+        user.password_digest
+      );
+      if (user && isValidPassword) {
+        req.session.userId = user.id;
+        res.json({
+          userId: user.id,
+          userName: user.name,
+          avatar: user.avatar,
+          about_you: user.about_you,
+          email: user.email,
+        });
+      }
     }
   });
 });
