@@ -2,15 +2,23 @@ function renderLogin() {
   document.querySelector(".entry-page-container").innerHTML = `
     <section class="login-form">
       <form onSubmit="login(event)">
-        <h2>Tweeter</h2>
-          
+        <div class="logo-container">
+          <img  class="logo" src="https://www.freepnglogos.com/uploads/twitter-logo-png/black-and-white-twitter-logo-png-hq-download-25.png" alt="image">
+          <h1>Tweeter</h1>
+        </div>
+        <h2>The more we care, we share!</h2>
+          <div>
           <input type="text" name="email" placeholder="Email/username:">
+          </div>
+
+          <div>
           <input type="password" name="password" placeholder="Password:">
+          </div>
           <p id='error'></p>
-        <button>Login</button>
+        <button class="sigup-form-button"><span>Login</span></button>
       </form>
-      <p>Not signed up?<span><button class="" onClick="renderSignUp()">Sign up</button>
-      </span></p>
+      <p class="login-alert">Not a user yet?<button class="entrypage-login-button" onClick="renderSignUp()">Sign up</button>
+      </p>
     </section>
   `;
 }
