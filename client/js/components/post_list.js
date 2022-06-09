@@ -28,7 +28,8 @@ function renderPostsList() {
         <input name='post_id' value='${post.id}' type='hidden'>
         <button>Like</button>
       </form>
-      <span>Num Of Likes</span>
+
+      <span>${numLikesForPost(post.id)} likes</span>
       <span class="" onClick="renderComments(event)">Comment</span>
     </section>
     
@@ -46,15 +47,20 @@ function renderPostsList() {
         </header>
         <p>${post.post}</p>
         <p>${post.attachment}</p>
-        <form>
-          <input name='id' value='${post.id}' type='hidden'>
-          <button class="" onClick="likePost(event)" value="${post.id}">Like</button>
+        <form onSubmit="likePost(event)">
+          <input name='post_id' value='${post.id}' type='hidden'>
+          <button>Like</button>
         </form>
-        <span>Num Of Likes</span>
+        
+        <span>${numLikesForPost(post.id)} likes</span>
         <span class="" onClick="renderComments(event)">Comment</span>
       </section>
       `
       )
       .join('');
   }
+}
+
+function numLikesForPost(postId) {
+  return state.likesArray.filter(like => Number(like) === postId).length
 }
