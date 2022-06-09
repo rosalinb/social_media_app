@@ -12,14 +12,14 @@ const Post = {
     return db.query(sql).then((dbRes) => dbRes.rows);
   },
 
-  create: (name, post, attachment) => {
+  create: (name, post, attachment, time_stamp) => {
     const sql = `
-      INSERT INTO posts(poster_user_id, post, attachment )
-      VALUES ($1, $2, $3)
+      INSERT INTO posts(poster_user_id, post, attachment, time_stamp)
+      VALUES ($1, $2, $3, $4)
       RETURNING *
     `;
     return db
-      .query(sql, [name, post, attachment])
+      .query(sql, [name, post, attachment, time_stamp])
       .then((dbRes) => dbRes.rows[0]);
   },
   delete: (postId) => {
