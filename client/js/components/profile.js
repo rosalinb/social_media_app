@@ -1,21 +1,30 @@
 function renderProfilePage() {
   if (state.loggedInUserName.avatar !== '') {
     document.querySelector('.entry-page-container').innerHTML = `
-      <img class="avatar-mini" src="${state.loggedInUserName.avatar}" alt="User's avatar">
-      <h2>Welcome ${state.loggedInUserName.userName}! This is your profile page</h2>
+      <img class="avatar-mini" src="${
+        state.loggedInUserName.avatar
+      }" alt="User's avatar">
+      <h2>Welcome ${
+        state.loggedInUserName.userName
+      }! This is your profile page</h2>
       <h3>About you:</h3>
       <p>${state.loggedInUserName.about_you}</p>  
       <button onclick="renderProfileDetailsChange()">Edit my details</button>
-      <section id="own-posts"></section>`;
+      <h3>See your posts!</h3>
+      <section id="own-posts">${renderOwnPosts()}</section>`;
   } else {
     document.querySelector('.entry-page-container').innerHTML = `
       <span class="avatar-mini" onclick="renderProfileDetailsChange()">Update your Avatar!</span>
-      <h2>Welcome ${state.loggedInUserName.userName}! This is your profile page</h2>
+      <h2>Welcome ${
+        state.loggedInUserName.userName
+      }! This is your profile page</h2>
       <h3>About you:</h3>
-      <p>${state.loggedInUserName.about_you}</p> if you want to change your details:, <button onclick="renderProfileDetailsChange()">Edit my details</button>
-      <section id="own-posts"></section>`;
+      <p>${
+        state.loggedInUserName.about_you
+      }</p> if you want to change your details:, <button onclick="renderProfileDetailsChange()">Edit my details</button>
+      <h3>See your posts!</h3>
+      <section id="own-posts">${renderOwnPosts()}</section>`;
   }
-  renderOwnPosts();
 }
 
 function renderProfileDetailsChange() {
@@ -54,12 +63,10 @@ function renderOwnPosts() {
   const postsById = state.posts.filter(
     (element) => element.poster_user_id == state.loggedInUserName.userId
   );
-  document.querySelector('#own-posts').innerHTML = `
-    <h2>See your past activity</h2>
-    <section><p>Hola</p>
-    ${postsById[0].post}
-    </section>
-  `;
+  // return console.log(postsById);
+  return postsById.map(
+    (post) => `<p>Posted on ${new Date()}</p><p>${post.post}</p>`
+  );
 }
 ////// THIS FUNCTION NEEDS SOME TWEAKING
 
