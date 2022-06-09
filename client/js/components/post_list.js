@@ -28,8 +28,9 @@ function renderPostsList() {
         <input name='post_id' value='${post.id}' type='hidden'>
         <button>Like</button>
       </form>
+
       <span>${numLikesForPost(post.id)} likes</span>
-      <span class="" onClick="commentPost(event)">Comment</span>
+      <span class="" onClick="renderComments(event)">Comment</span>
     </section>
     
   `
@@ -50,8 +51,9 @@ function renderPostsList() {
           <input name='post_id' value='${post.id}' type='hidden'>
           <button>Like</button>
         </form>
+        
         <span>${numLikesForPost(post.id)} likes</span>
-        <span class="" onClick="commentPost(event)">Comment</span>
+        <span class="" onClick="renderComments(event)">Comment</span>
       </section>
       `
       )

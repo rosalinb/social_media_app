@@ -1,5 +1,36 @@
-function renderComments() {
-    document.querySelector()
+function renderComments(event) {
+    const page = document.querySelector("#page");
+    const commentBtn = event.target;
+    const postDOM = commentBtn.closest('.post')
+    const postId = postDOM.dataset.id
+    console.log(postId) 
+
+    let targetPost = state.posts.filter(post => post.id ===     postId)
+    console.log(targetPost)
+
+    page.innerHTML = `
+        ${navBar}
+        <section class='post' data-id='${state.posts[0].id}'>
+        <header>
+            <h2>${state.loggedInUserName.userName}</h2>
+            <img class="avatar-mini" src="${state.loggedInUserName.avatar}" alt="User's avatar">
+        </header>
+        <p>${state.posts[0].post}</p>
+        <p>${state.posts[0].attachment}</p>
+        <form onSubmit="likePost(event)">
+            <input name='post_id' value='${state.posts[0].id}' type='hidden'>
+            <button>Like</button>
+        </form>
+        <span>Num Of Likes</span>
+        </section>
+        <section class="comment-form">
+        <form onSubmit="commentPost(event)">
+            <input name='comments' type='text'>
+            <button>Add Comment!</button>
+        </form>
+        </section>
+        `
+
 }
 
 function commentPost(event) {
