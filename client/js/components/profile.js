@@ -1,6 +1,6 @@
 function renderProfilePage() {
-  if (state.loggedInUserName.avatar !== '') {
-    document.querySelector('.entry-page-container').innerHTML = `
+  if (state.loggedInUserName.avatar !== "") {
+    document.querySelector(".entry-page-container").innerHTML = `
       <img class="avatar-mini" src="${
         state.loggedInUserName.avatar
       }" alt="User's avatar">
@@ -13,7 +13,7 @@ function renderProfilePage() {
       <h3>See your posts!</h3>
       <section id="own-posts">${renderOwnPosts()}</section>`;
   } else {
-    document.querySelector('.entry-page-container').innerHTML = `
+    document.querySelector(".entry-page-container").innerHTML = `
       <span class="avatar-mini" onclick="renderProfileDetailsChange()">Update your Avatar!</span>
       <h2>Welcome ${
         state.loggedInUserName.userName
@@ -28,7 +28,7 @@ function renderProfilePage() {
 }
 
 function renderProfileDetailsChange() {
-  document.querySelector('#own-posts').innerHTML = `
+  document.querySelector("#own-posts").innerHTML = `
     <h2>change details</h2>
     <section class="changeUserDetails">
       <form onSubmit="changeProfileDetails(event)">
@@ -46,9 +46,9 @@ function changeProfileDetails(event) {
   event.preventDefault();
   const form = event.target;
   const data = Object.fromEntries(new FormData(form));
-  fetch('/api/profiles', {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
+  fetch("/api/profiles", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   })
     .then((res) => res.json())
