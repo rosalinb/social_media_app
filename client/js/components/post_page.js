@@ -6,7 +6,6 @@ function renderPostPage() {
         <p>${state.loggedInUserName.userName}</p>
         <label>What's happening?</label>
         <textarea name='post' rows='4' cols='50'></textarea>
-        <input text="hidden" name="localtime">${localTime}</input>
         <input name="attachment">Attachment</input>
         <button>Post</button>
       </form>
