@@ -12,7 +12,7 @@
 // }
 
 function renderPostsList() {
-  if (state.loggedInUserName.avatar !== "") {
+  if (state.loggedInUserName.avatar !== '') {
     return state.posts
       .map(
         (post) => `
@@ -33,11 +33,10 @@ function renderPostsList() {
 
       <span>${numLikesForPost(post.id)} likes</span>
       <span class="" onClick="renderComments(event)">Comment</span>
-    </section>
-    
+    </section>    
   `
       )
-      .join("");
+      .join('');
   } else {
     return state.posts
       .map(
@@ -59,7 +58,7 @@ function renderPostsList() {
       </section>
       `
       )
-      .join("");
+      .join('');
   }
 }
 

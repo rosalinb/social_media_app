@@ -66,18 +66,18 @@ function renderOwnPosts() {
   );
   // return console.log(postsById);
   return postsById.map(
-    (post) => `<p class="own-post">Posted on ${new Date()}</p><p>${
-      post.post
-    }</p>
-    `
+    (post) => `<section class="postx" data-id="${post.id}">
+      <p class="own-post">Posted on ${new Date()}</p><p>${post.post}</p>
+      <button onClick="deleteOwnPost()">Retract yourself?</button>
+    </section>  `
   );
 }
 
 function deleteOwnPost(event) {
   const deleteBtn = event.target;
-  const ownPostDOM = deleteBtn.closest('.ownPost');
+  const ownPostDOM = deleteBtn.closest('.postx');
   // console.log(treasureDOM) this gives me the dom object that we are manipulating (the shole section, )
-  const ownPostId = ownPostDOM.dataset.id;
+  const PostId = ownPostDOM.dataset.id;
   //dataset.id is getting the tag data-id
   // console.log(treasureId);
   //this is giving me which id im clicking
