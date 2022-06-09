@@ -3,8 +3,14 @@ function renderSignUp() {
   pageSection.innerHTML = `
     <section class="sign-up-form">
       <form onSubmit="signUp(event)">
+        
+        <div class="logo-container">
+          <img  class="logo" src="https://www.freepnglogos.com/uploads/twitter-logo-png/black-and-white-twitter-logo-png-hq-download-25.png" alt="image">
+          <h1>Tweeter</h1>
+        </div>
+        
         <h2>The more we care, we share!</h2>
-        <h3>Tweeter</h3>
+        
           <div>
             <input type="text" name="avatar" placeholder="Upload your avatar">  
           </div>
