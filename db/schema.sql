@@ -28,15 +28,7 @@ CREATE TABLE likes(
 CREATE TABLE comments(
   id SERIAL PRIMARY KEY,
   post_id TEXT,
-  commenter_id TEXT,
-<<<<<<< HEAD
+  commenter_id INT,
   comments TEXT,
-<<<<<<< HEAD
-  time_stamp TEXT,
-=======
   time_stamp TEXT
->>>>>>> 1d1e1a2 (schema and profile)
-=======
-  comments TEXT
->>>>>>> 0b2567e (rebasing)
-);
+  );
