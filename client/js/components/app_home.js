@@ -17,9 +17,11 @@ function renderAppHome() {
       <div class="entry-page-info">
         <h2>Take a sneak peek at what's happening around the world.</h2>
        
-        <p class="icon-heading"><span class="material-icons follow-interest" >follow_the_signs</span>Follow your interests.</p>
-        <p class="icon-heading"><span class="material-icons join-heard" >handshake</span>Join the heard</p>
-        <p class="icon-heading"><span class="material-icons hear-people" >connect_without_contact</span>Hear what people are talking about</p>
+        <p class="icon-heading entry-page"><span class="material-icons entry-page" >follow_the_signs</span>Follow your interests.</p>
+
+        <p class="icon-heading "><span class="material-icons entry-page" >handshake</span>Join the heard</p>
+
+        <p class="icon-heading"><span class="material-icons entry-page" >connect_without_contact</span>Hear what people are talking about</p>
 
         <div class="signup-login-tabs">
             <ul>

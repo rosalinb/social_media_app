@@ -1,0 +1,27 @@
+section.entry-page-container.user-post-info {
+    padding: 50px 100px;
+    margin: 20px;
+}
+
+div.logo-container {
+    color:white;
+    font-size: 40px;
+    font-family: 'Lobster', cursive;
+}
+
+.material-icons.nav-icon {
+    color:white;
+    font-size: 50px;
+}
+
+.material-icons.nav-icon:hover{
+    color:#1D9BF0;
+}
+
+.user-page-details {
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    gap:30px;
+
+}
