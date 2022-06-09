@@ -19,7 +19,7 @@ function likePost(event) {
     // console.log(individualLikes)
     // console.log(state.posts.id)
 
-    
+
 
 
     const count = {}
