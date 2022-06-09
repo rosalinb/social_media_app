@@ -2,7 +2,7 @@ const db = require("../db/db")
 
 const Comment = {
     findPost: () => {
-        const sql = 'SELECT FROM posts WHERE id = $1' 
+        const sql = 'SELECT * FROM posts WHERE id = $1' 
         
         return db
         .query(sql)
