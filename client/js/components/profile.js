@@ -1,6 +1,6 @@
 function renderProfilePage() {
-  if (state.loggedInUserName.avatar !== '') {
-    document.querySelector('.entry-page-container').innerHTML = `
+  if (state.loggedInUserName.avatar !== "") {
+    document.querySelector(".entry-page-container").innerHTML = `
       <img class="loggedin-user-avatar" src="${
         state.loggedInUserName.avatar
       }" alt="User's avatar">
@@ -12,7 +12,7 @@ function renderProfilePage() {
       <h3>My tweets</h3>
       <section id="own-posts">${renderOwnPosts()}</section>`;
   } else {
-    document.querySelector('.entry-page-container').innerHTML = `
+    document.querySelector(".entry-page-container").innerHTML = `
       <span class="avatar-mini" onclick="renderProfileDetailsChange()">Update your Avatar!</span>
       <h2>Welcome ${state.loggedInUserName.userName}!</h2>
       <h3>My profile info:</h3>
@@ -26,16 +26,26 @@ function renderProfilePage() {
 }
 
 function renderProfileDetailsChange() {
-  document.querySelector('#own-posts').innerHTML = `
+  document.querySelector("#own-posts").innerHTML = `
     <h2>change details</h2>
     <section class="changeUserDetails">
-      <form onSubmit="changeProfileDetails(event)">
-        <input type="text" name="name" value="${state.loggedInUserName.userName}" readonly>
-        <input type="text" name="email" value="${state.loggedInUserName.email}" readonly>
-        <input type="text" name="avatar" placeholder="Upload your avatar">   
-        <textarea rows="4" cols="16" name="about_you" placeholder="Tell us about you in 240 characters" maxlength="240"></textarea>
-        <button>Change details</button>
-      </form>
+      <div class="edit-profile-info-form">
+        <form onSubmit="changeProfileDetails(event)">
+          <div>
+            <input type="text" name="name" value="${state.loggedInUserName.userName}" readonly>
+          </div>
+          <div>
+            <input type="text" name="email" value="${state.loggedInUserName.email}" readonly>
+          </div>
+          <div>
+            <input type="text" name="avatar" value="${state.loggedInUserName.avatar}" placeholder="update your avatar">
+          </div>
+          <div>    
+            <input name="about_you" value="${state.loggedInUserName.about_you}" placeholder="update about you"></input>
+          </div>
+          <button>Change details</button>
+        </form>
+      </div>
       <button onclick="renderProfilePage()">I changed my mind</button>
     </section>
   `;
@@ -45,9 +55,9 @@ function changeProfileDetails(event) {
   event.preventDefault();
   const form = event.target;
   const data = Object.fromEntries(new FormData(form));
-  fetch('/api/profiles', {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
+  fetch("/api/profiles", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   })
     .then((res) => res.json())
@@ -73,19 +83,19 @@ function renderOwnPosts() {
       <button class="profile-delete-button" onClick="deleteOwnPost(event)"><i class="fa fa-trash-o"></i>Retract yourself?</button>
     </section>  `
     )
-    .join('');
+    .join("");
 }
 
 function deleteOwnPost(event) {
   const deleteBtn = event.target;
-  const ownPostDOM = deleteBtn.closest('.postx');
+  const ownPostDOM = deleteBtn.closest(".postx");
   // console.log(treasureDOM) this gives me the dom object that we are manipulating (the shole section, )
   const postId = ownPostDOM.dataset.id;
   //dataset.id is getting the tag data-id
   // console.log(treasureId);
   //this is giving me which id im clicking
   fetch(`/api/posts/${postId}`, {
-    method: 'DELETE',
+    method: "DELETE",
   }).then(() => {
     // this is removing just that one treasure from my state.treasures
     state.posts = state.posts.filter((t) => t.id != postId);

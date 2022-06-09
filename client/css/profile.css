@@ -6,9 +6,6 @@
 }
 
 
-
-
-
 .avatar-mini{
     vertical-align: middle;
     width: 100px;
@@ -45,4 +42,22 @@
 
 .profile-page-tweets:hover{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.edit-profile-info-form {
+    border: 3px solid brown;
+    text-align: center;
+    margin: 50px;
+}
+
+
+.edit-profile-info-form  form div{
+    margin: 20px;
+}
+
+.edit-profile-info-form  form input {
+    padding: 10px 65px 10px 5px;
+    border-color: #1D9BF0;
+    border-radius: 5px;
+   
 }
