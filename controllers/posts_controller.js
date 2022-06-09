@@ -8,6 +8,9 @@ router.post('/', (req, res) => {
   const name = req.session.userId
   const post = req.body.post
   const attachment = req.body.attachment
+  // const localtime = req.body.localtime
+  // const username = req.body.username
+  // const avatar = req.body.avatar
 
   Post
     .create(name, post, attachment)

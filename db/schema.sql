@@ -13,7 +13,7 @@ CREATE TABLE users(
 
 CREATE TABLE posts(
   id SERIAL PRIMARY KEY,
-  poster_user_id TEXT,
+  poster_user_id INT,
   post TEXT,
   attachment TEXT,
   time_stamp TEXT
@@ -31,5 +31,5 @@ CREATE TABLE comments(
   post_id TEXT,
   commenter_id TEXT,
   comments TEXT,
-  time_stamp TEXT
+  time_stamp TEXT,
 );
