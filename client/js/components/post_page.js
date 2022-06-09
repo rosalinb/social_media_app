@@ -26,5 +26,8 @@ function createPost(event) {
     .then((post) => {
       state.posts.unshift(post);
       renderUserHomePage();
+      crazyfunction();
     });
+  // crazyfunction();
+  renderUserHomePage();
 }

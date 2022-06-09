@@ -11,8 +11,7 @@ function likePost(event) {
   .then((res) => res.json())
   .then((likes) => {
     state.likesArray.push(likes.post_id)
-    console.log(state.likesArray)
-
+    // console.log(state.likesArray)
     renderUserHomePage()
   })
 }
