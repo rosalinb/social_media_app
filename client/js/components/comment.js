@@ -59,7 +59,5 @@ function commentPost(event) {
         body:  JSON.stringify(data),
     })
     .then((res) => res.json())
-    .then((comment) => {
-        console.log(comment)
-    })
+    // .then((comment) => {}
 }
