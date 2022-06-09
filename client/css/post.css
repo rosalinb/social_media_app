@@ -1,46 +1,91 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
 .loggedin-user-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.all-tweets{
-    border:2px solid #1D9BF0;
-    font-family: 'Montserrat', sans-serif; 
-    margin-bottom: 20px; 
-    font-size: 20px;
-    border-radius: 15px;
-    padding: 10px 10px;
-    
+.all-tweets {
+  border: 2px solid #1d9bf0;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+  font-size: 20px;
+  border-radius: 15px;
+  padding: 10px 10px;
 }
-.all-tweets:hover{
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.all-tweets header{
-    display: flex;
-    justify-content: center;
-
+.all-tweets:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.p-tweets{
-    font-size: 20px;
-    color:black;
-    font-weight:300;
+.all-tweets header {
+  display: flex;
+  justify-content: center;
 }
 
-.like-button{
-    color:#1D9BF0;
-    border: none;
-    outline: none;
-    background:transparent;
-    cursor: pointer;
-}
-.like-button i{
-    color:#1D9BF0;
-    font-size: 40px;
+.p-tweets {
+  font-size: 20px;
+  color: black;
+  font-weight: 300;
 }
 
+.like-button {
+  color: #1d9bf0;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+.like-button i {
+  color: #1d9bf0;
+  font-size: 40px;
+}
+
+/* ADDITIONS */
+/* .nav-bar {
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: black;
+}
+
+.nav-bar:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.nav-bar ul {
+  padding: 50px;
+} */
+
+.after-post-bar li {
+  list-style: none;
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #1d9bf0;
+  margin-bottom: 40px;
+}
+
+.after-post-bar li:hover {
+  color: white;
+}
+
+.material-icons.post-tweet-icon {
+  color: #1d9bf0;
+  font-size: 50px;
+}
+
+.material-icons.post-tweet-icon:hover {
+  color: white;
+}
+
+/* div.entry-page-wrapper.user-page-wrapper { */
+/* display: block;
+} */
