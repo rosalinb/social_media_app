@@ -3,22 +3,20 @@ function renderComments(event) {
     const commentBtn = event.target;
     const postDOM = commentBtn.closest('.post')
     const postId = postDOM.dataset.id
-    console.log(postId) 
 
-    let targetPost = state.posts.filter(post => post.id ===     postId)
-    console.log(targetPost)
+    let targetPost = state.posts.filter(post => Number(post.id) == postId)[0]
 
     page.innerHTML = `
         ${navBar}
-        <section class='post' data-id='${state.posts[0].id}'>
+        <section class='post' data-id='${targetPost.id}'>
         <header>
             <h2>${state.loggedInUserName.userName}</h2>
             <img class="avatar-mini" src="${state.loggedInUserName.avatar}" alt="User's avatar">
         </header>
-        <p>${state.posts[0].post}</p>
-        <p>${state.posts[0].attachment}</p>
+        <p>${targetPost.post}</p>
+        <p>${targetPost.attachment}</p>
         <form onSubmit="likePost(event)">
-            <input name='post_id' value='${state.posts[0].id}' type='hidden'>
+            <input name='post_id' value='${targetPost.id}' type='hidden'>
             <button>Like</button>
         </form>
         <span>Num Of Likes</span>
