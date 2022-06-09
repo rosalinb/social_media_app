@@ -67,8 +67,9 @@ function renderOwnPosts() {
   // return console.log(postsById);
   return postsById.map(
     (post) => `<section class="postx" data-id="${post.id}">
-      <p class="own-post">Posted on ${new Date()}</p><p>${post.post}</p>
-      <button onClick="deleteOwnPost()">Retract yourself?</button>
+      <p class="own-post">Posted on ${new Date()}</p>
+      <p>${post.post}</p>
+      <button onClick="deleteOwnPost(event)">Retract yourself?</button>
     </section>  `
   );
 }
@@ -77,7 +78,7 @@ function deleteOwnPost(event) {
   const deleteBtn = event.target;
   const ownPostDOM = deleteBtn.closest('.postx');
   // console.log(treasureDOM) this gives me the dom object that we are manipulating (the shole section, )
-  const PostId = ownPostDOM.dataset.id;
+  const postId = ownPostDOM.dataset.id;
   //dataset.id is getting the tag data-id
   // console.log(treasureId);
   //this is giving me which id im clicking
@@ -85,7 +86,7 @@ function deleteOwnPost(event) {
     method: 'DELETE',
   }).then(() => {
     // this is removing just that one treasure from my state.treasures
-    state.posts = state.posts.filter((t) => t.id != ownPostId);
+    state.posts = state.posts.filter((t) => t.id != postId);
     renderOwnPosts();
   });
 }

@@ -40,11 +40,13 @@ router.get('/', (req, res) => {
   );
 });
 
-router.delete('/:id', (req, res) => {
-  const postId = req.params.id;
+// router.delete('/:id', (req, res) => {
+//   const postId = req.params.id;
 
-  Posts.delete(postId).then(() => res.json({ message: 'delete successfully' }));
-});
+//   Profile.delete(postId).then(() =>
+//     res.json({ message: 'delete successfully' })
+//   );
+// });
 
 // router.delete('/api/profiles/:id');
 
