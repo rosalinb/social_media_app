@@ -21,11 +21,12 @@ function renderSignUp() {
             <input type="password" name="password" placeholder="password">
           </div>
  
-        <button class="button"><span>Sign Up</span></button>
+        <button class="sigup-form-button"><span>Sign Up</span></button>
       </form>
 
-      <p>Already have an account?<span><button class="button" onClick="renderLogin()">Login</button>
-      </span></p>
+      <p class="login-alert">Already have an account?
+      <button class="entrypage-login-button" onClick="renderLogin()">Login</button>
+      </p>
 
     </section>
   `;
