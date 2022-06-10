@@ -1,6 +1,7 @@
 const state = {
   posts: [],
   likesArray: [],
+  postsWithComments: [],
 };
 
 fetch('/api/posts')
@@ -14,5 +15,11 @@ fetch('/api/likes')
   .then((likes) => {
     state.likesArray = likes;
   });
+
+// fetch('/api/comments')
+//   .then((res) => res.json())
+//   .then((comments) => {
+//     state.postsWithComments = comments;
+//   });
 
 renderAppHome();

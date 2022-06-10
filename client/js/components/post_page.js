@@ -1,5 +1,7 @@
 function renderPostPage() {
-  var localTime = new Date().toLocaleTimeString();
+  let localDate = new Date().toLocaleDateString();
+  let localTime = new Date().toLocaleTimeString();
+  let allTime = `${localDate} at ${localTime}`;
   document.querySelector('.entry-page-container').innerHTML = `
     <section>
       <form onSubmit="createPost(event)">
@@ -7,6 +9,7 @@ function renderPostPage() {
         <label>What's happening?</label>
         <textarea name='post' rows='4' cols='50'></textarea>
         <input name="attachment">Attachment</input>
+        <input name="timestamp" value="${allTime}" type="hidden"></input>
         <button>Post</button>
       </form>
     </section>
@@ -25,9 +28,19 @@ function createPost(event) {
     .then((res) => res.json())
     .then((post) => {
       state.posts.unshift(post);
-      renderUserHomePage();
+      // renderUserHomePage();
       crazyfunction();
+      postCreated();
     });
-  // crazyfunction();
-  renderUserHomePage();
+  postCreated();
+  // renderUserHomePage();
+}
+
+//this is new function
+function postCreated() {
+  document.querySelector('.entry-page-container').innerHTML = `
+    <section>
+      <h1>Tweet created!</h1>
+      </section>
+    `;
 }

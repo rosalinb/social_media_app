@@ -8,11 +8,11 @@ router.post('/', (req, res) => {
   const name = req.session.userId;
   const post = req.body.post;
   const attachment = req.body.attachment;
-  // const localtime = req.body.localtime
+  const timestamp = req.body.timestamp;
   // const username = req.body.username
   // const avatar = req.body.avatar
 
-  Post.create(name, post, attachment).then((post) => res.json(post));
+  Post.create(name, post, attachment, timestamp).then((post) => res.json(post));
 });
 
 router.get('/', (req, res) => {

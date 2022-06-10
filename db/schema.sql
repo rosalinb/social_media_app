@@ -15,7 +15,8 @@ CREATE TABLE posts(
   id SERIAL PRIMARY KEY,
   poster_user_id INT,
   post TEXT,
-  attachment TEXT
+  attachment TEXT,
+  time_stamp TEXT
 );
 
 CREATE TABLE likes(
