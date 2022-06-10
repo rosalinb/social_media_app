@@ -41,13 +41,6 @@ function postCreated() {
   document.querySelector('.entry-page-container').innerHTML = `
     <section>
       <h1>Tweet created!</h1>
-      <div class="after-post-bar">
-        <li  onClick="renderUserHomePage()"><span class="material-icons.post-tweet-icon">other_houses</span></li>
-          
-        <li onClick="renderProfilePage()"><span class="material-icons.post-tweet-icon">person</span></li>
-
-        <li  onClick="renderPostPage()"><span class="material-icons.post-tweet-icon">sms</span></li>
-      </div>
       </section>
     `;
 }

@@ -29,13 +29,23 @@ function renderProfileDetailsChange() {
   document.querySelector('#own-posts').innerHTML = `
     <h2>change details</h2>
     <section class="changeUserDetails">
+    <div class="edit-profile-info-form">
       <form onSubmit="changeProfileDetails(event)">
-        <input type="text" name="name" value="${state.loggedInUserName.userName}" readonly>
-        <input type="text" name="email" value="${state.loggedInUserName.email}" readonly>
-        <input type="text" name="avatar" placeholder="Upload your avatar">   
-        <textarea rows="4" cols="16" name="about_you" placeholder="Tell us about you in 240 characters" maxlength="240"></textarea>
+        <div>
+          <input type="text" name="name" value="${state.loggedInUserName.userName}" readonly>
+        </div>
+        <div>
+          <input type="text" name="email" value="${state.loggedInUserName.email}" readonly>
+        </div>
+        <div>
+          <input type="text" name="avatar" value="${state.loggedInUserName.avatar}" placeholder="update your avatar">
+        </div>
+        <div>    
+          <input name="about_you" value="${state.loggedInUserName.about_you}" placeholder="update about you"></input>
+        </div>
         <button>Change details</button>
       </form>
+    </div>
       <button onclick="renderProfilePage()">I changed my mind</button>
     </section>
   `;
