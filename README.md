@@ -8,7 +8,7 @@
 <p>"Tweeter" as the name shows is a attempt of cloning the popular "twitter" appication.
     This is our first team hackathon at General Assembly to built an appication with basic CRUD functionality using Node express, fetch API and postgresql.
 </p>
-<p>"Tweeter" basically allows users to sigin up and login, post and share tweets and images. It also allows users to like other users tweets and shows the count of likes in their shared posts</p>
+<p>"Tweeter" basically allows users to sigin up and login, post and share tweets and images. It also allows users to like other users tweets and shows the count of likes in their shared posts.</p>
 
 <h2>Features:</h2>
 <ul>
