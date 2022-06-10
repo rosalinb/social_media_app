@@ -12,6 +12,7 @@
 
 .nav-bar ul {
     padding: 50px;
+  
 }
 
 .nav-bar li {
@@ -23,6 +24,8 @@
     gap: 10px;
     color:white;
     margin-bottom: 40px;
+    cursor: pointer;
+
 }
 
 .nav-bar li:hover{

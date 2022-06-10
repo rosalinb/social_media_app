@@ -43,10 +43,12 @@ function renderProfileDetailsChange() {
           <div>    
             <input name="about_you" value="${state.loggedInUserName.about_you}" placeholder="update about you"></input>
           </div>
-          <button>Change details</button>
+          <div>
+            <button class="profile-edit-button" ><span class="material-icons update-details">check_circle</span></button>
+          </div>
         </form>
       </div>
-      <button onclick="renderProfilePage()">I changed my mind</button>
+      <button class="profile-edit-button" onclick="renderProfilePage()"><span class="material-icons dont-update-details">dangerous</span></button>
     </section>
   `;
 }
