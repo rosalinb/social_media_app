@@ -24,7 +24,7 @@ function renderPostsList() {
         </header>
         
         <p class="p-tweets">${post.post}</p>
-        <img src="${post.attachment}" alt="attachment">
+        <img src="${post.attachment}" alt="attachment" width="400px">
         <p class="p-tweets">Posted on ${post.time_stamp}</p>
         
         <form onSubmit="likePost(event)">
@@ -51,7 +51,7 @@ function renderPostsList() {
           <span class="avatar-mini" onclick="renderProfileDetailsChange()">Update your Avatar!</span>
         </header>
         <p class="p-tweets">${post.post}</p>
-        <img src="${post.attachment}" alt="attachment"/>
+        <img src="${post.attachment}" alt="attachment" width="400px"/>
         <p class="p-tweets">Posted on ${post.time_stamp}</p>
         <form onSubmit="likePost(event)">
           <input name='post_id' value='${post.id}' type='hidden'>
