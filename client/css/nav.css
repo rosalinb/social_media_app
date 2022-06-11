@@ -1,35 +1,51 @@
 .nav-bar {
-    border: 1px solid grey;
-    border-radius: 10px;
-    margin: 10px;
-    background-color: black;
-    
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: black;
 }
 
-.nav-bar:hover{
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+.nav-bar:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .nav-bar ul {
-    padding: 50px;
+  padding: 50px;
 }
 
 .nav-bar li {
-    list-style: none;
-    font-size: 25px;
+  list-style: none;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  margin-bottom: 40px;
+  cursor`: pointer;
+}
+
+.nav-bar li:hover {
+  color: #1d9bf0;
+}
+
+div.entry-page-wrapper.user-page-wrapper {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .user-page-details {
+    flex-direction: column;
+  }
+  .nav-bar ul {
+    padding: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    color:white;
-    margin-bottom: 40px;
-}
-
-.nav-bar li:hover{
-    color:#1D9BF0;
-}
-
-div.entry-page-wrapper.user-page-wrapper{
-    display: block;
-  
+    flex-direction: column;
+    gap: 3vw;
+  }
+  .attachments-for-post {
+    width: 150px;
+  }
 }

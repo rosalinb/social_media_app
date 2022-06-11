@@ -3,7 +3,7 @@ const db = require("../db/db")
 const Comment = {
     findAll: () => {
         const sql = `
-        SELECT posts.*, comments.commenter_id, comments , users.name
+        SELECT posts.*, comments.commenter_id, comments, users.name
         FROM posts
         INNER JOIN comments ON posts.id = comments.post_id
         INNER JOIN users ON users.id = commenter_id
@@ -16,7 +16,7 @@ const Comment = {
 
     create: (post_id, commenter_id, comments) => {
         const sql = `
-        INSERT INTO comments(post_id, commenter_id , comments)
+        INSERT INTO comments(post_id, commenter_id, comments)
         VALUES ($1, $2, $3)
         RETURNING *
         `
