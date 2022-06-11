@@ -1,28 +1,26 @@
 function renderProfilePage() {
   if (state.loggedInUserName.avatar !== '') {
     document.querySelector('.entry-page-container').innerHTML = `
-      <img class="avatar-mini" src="${
+      <img class="loggedin-user-avatar" src="${
         state.loggedInUserName.avatar
       }" alt="User's avatar">
-      <h2>Welcome ${
-        state.loggedInUserName.userName
-      }! This is your profile page</h2>
-      <h3>About you:</h3>
-      <p>${state.loggedInUserName.about_you}</p>  
-      <button onclick="renderProfileDetailsChange()">Edit my details</button>
-      <h3>See your posts!</h3>
+      <h2>Welcome ${state.loggedInUserName.userName}!</h2>
+      <h3>My profile info:</h3>
+      <p>${state.loggedInUserName.about_you}</p> 
+
+      <button class="profile-edit-button" onclick="renderProfileDetailsChange()"><i class="fa fa-edit"></i>Edit Profile</button>
+      <h3>My tweets</h3>
       <section id="own-posts">${renderOwnPosts()}</section>`;
   } else {
     document.querySelector('.entry-page-container').innerHTML = `
       <span class="avatar-mini" onclick="renderProfileDetailsChange()">Update your Avatar!</span>
-      <h2>Welcome ${
-        state.loggedInUserName.userName
-      }! This is your profile page</h2>
-      <h3>About you:</h3>
-      <p>${
-        state.loggedInUserName.about_you
-      }</p> if you want to change your details:, <button onclick="renderProfileDetailsChange()">Edit my details</button>
-      <h3>See your posts!</h3>
+      <h2>Welcome ${state.loggedInUserName.userName}!</h2>
+      <h3>My profile info:</h3>
+      <p>${state.loggedInUserName.about_you}</p> 
+
+      <button class="profile-edit-button" onclick="renderProfileDetailsChange()"><i class="fa fa-edit"></i>Edit Profile</button>
+
+      <h3>My tweets</h3>
       <section id="own-posts">${renderOwnPosts()}</section>`;
   }
 }
@@ -31,14 +29,26 @@ function renderProfileDetailsChange() {
   document.querySelector('#own-posts').innerHTML = `
     <h2>change details</h2>
     <section class="changeUserDetails">
+    <div class="edit-profile-info-form">
       <form onSubmit="changeProfileDetails(event)">
-        <input type="text" name="name" value="${state.loggedInUserName.userName}" readonly>
-        <input type="text" name="email" value="${state.loggedInUserName.email}" readonly>
-        <input type="text" name="avatar" placeholder="Upload your avatar">   
-        <textarea rows="4" cols="16" name="about_you" placeholder="Tell us about you in 240 characters" maxlength="240"></textarea>
-        <button>Change details</button>
+        <div>
+          <input type="text" name="name" value="${state.loggedInUserName.userName}" readonly>
+        </div>
+        <div>
+          <input type="text" name="email" value="${state.loggedInUserName.email}" readonly>
+        </div>
+        <div>
+          <input type="text" name="avatar" value="${state.loggedInUserName.avatar}" placeholder="update your avatar">
+        </div>
+        <div>    
+          <input name="about_you" value="${state.loggedInUserName.about_you}" placeholder="update about you"></input>
+        </div>
+        <div>
+            <button class="profile-edit-button" ><span class="material-icons update-details">check_circle</span></button>
+          </div>
       </form>
-      <button onclick="renderProfilePage()">I changed my mind</button>
+    </div>
+      <button class="profile-edit-button"onclick="renderProfilePage()">I changed my mind</button>
     </section>
   `;
 }
@@ -65,13 +75,17 @@ function renderOwnPosts() {
     (element) => element.poster_user_id == state.loggedInUserName.userId
   );
   // return console.log(postsById);
-  return postsById.map(
-    (post) => `<section class="postx" data-id="${post.id}">
-      <p class="own-post">Posted on ${new Date()}</p>
+  return postsById
+    .map(
+      (
+        post
+      ) => `<section class="postx profile-page-tweets" data-id="${post.id}">
+      <p class="own-post">Posted on ${post.time_stamp}</p>
       <p>${post.post}</p>
-      <button onClick="deleteOwnPost(event)">Retract yourself?</button>
+      <button class="profile-delete-button" onClick="deleteOwnPost(event)"><i class="fa fa-trash-o"></i>Retract yourself?</button>
     </section>  `
-  ).join('');
+    )
+    .join('');
 }
 
 function deleteOwnPost(event) {
@@ -87,7 +101,7 @@ function deleteOwnPost(event) {
   }).then(() => {
     // this is removing just that one treasure from my state.treasures
     state.posts = state.posts.filter((t) => t.id != postId);
-    renderOwnPosts();
+    renderProfilePage();
   });
 }
 ////// THIS FUNCTION NEEDS SOME TWEAKING

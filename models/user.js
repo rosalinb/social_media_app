@@ -1,4 +1,4 @@
-const db = require("../db/db");
+const db = require('../db/db');
 
 const User = {
   findByEmail: (email) => {
@@ -20,11 +20,16 @@ const User = {
       .query(sql, [avatar, name, email, user_type, passwordDigest, about_you])
       .then((dbRes) => dbRes.rows[0].name);
   },
+  findUserIdByEmail: (email) => {
+    const sql = `
+        SELECT id FROM users
+        WHERE email = $1
+    `;
 
-  // findUserById: (id) => {
-  //   const sql = `SELECT * FROM users WHERE id = $1`;
-  //   return db.query(sql, [id]).then((dbRes) => dbRes.row[0]);
-  // },
+    return db.query(sql, [email]).then((dbRes) => {
+      return dbRes.rows[0];
+    });
+  },
 };
 
 module.exports = User;

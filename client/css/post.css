@@ -1,6 +1,105 @@
-.user-page-details {
-    display:flex;
-    justify-content: space-around;
-    align-content: center;
-    gap:5vw;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+.loggedin-user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.all-tweets {
+  border: 2px solid #1d9bf0;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+  font-size: 20px;
+  border-radius: 15px;
+  padding: 10px 10px;
+}
+.all-tweets:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.all-tweets header {
+  display: flex;
+  justify-content: center;
+}
+
+.p-tweets {
+  font-size: 20px;
+  color: black;
+  font-weight: 300;
+}
+
+.like-button {
+  color: #1d9bf0;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+.like-button i {
+  color: #1d9bf0;
+  font-size: 40px;
+}
+
+/* TO POST NEW TWEET : CSS FOR POST FORM */
+
+.post-new-tweets{
+  border:2px solid #1D9BF0;
+  font-family: 'Montserrat', sans-serif; 
+  margin-bottom: 20px; 
+  font-size: 20px;
+  border-radius: 15px;
+  padding: 10px 10px;
+  text-align: center;
+}
+
+.post-new-tweets:hover{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.post-new-tweets h2 {
+  color: #1D9BF0;
+  text-align: center;
+} 
+
+.post-new-tweets form div{
+  margin: 20px;
+}
+
+.post-new-tweets form input {
+  padding: 10px 65px 10px 5px;
+  border-color: #1D9BF0;
+  border-radius: 5px;
+
+}
+
+.post-new-tweets form textarea {
+  padding: 10px 65px 10px 5px;
+  border-color: #1D9BF0;
+  border-radius: 5px;
+
+}
+
+.material-icons.attachment-icon{
+  color:#AE0F54;
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 40px;
+}
+
+.post-tweets-button{
+  border: none;
+  outline: none;
+  background:transparent;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.material-icons.post-tweets{
+  color: #1D9BF0;
+  cursor: pointer;
+  font-size:40px;
 }

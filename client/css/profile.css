@@ -1,6 +1,87 @@
-.avatar-mini{
-    vertical-align: middle;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+.loggedin-user-avatar {
+  vertical-align: middle;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.avatar-mini {
+  vertical-align: middle;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile-edit-button,
+.profile-delete-button {
+  color: #1d9bf0;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+}
+.profile-edit-button i,
+.profile-delete-button i {
+  color: #1d9bf0;
+  font-size: 40px;
+}
+.profile-delete-button i {
+  color: #ae0f54;
+}
+
+.profile-page-tweets {
+  border: 2px solid #1d9bf0;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+  font-size: 20px;
+  border-radius: 15px;
+  padding: 10px 10px;
+}
+
+.profile-page-tweets:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.edit-profile-info-form {
+  border: 3px solid brown;
+  text-align: center;
+  margin: 50px;
+  border-radius: 15px;
+}
+
+.edit-profile-info-form:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.edit-profile-info-form form div {
+  margin: 20px;
+}
+
+.edit-profile-info-form form input {
+  padding: 10px 65px 10px 5px;
+  border-color: #1d9bf0;
+  border-radius: 5px;
+}
+
+.profile-edit-button {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.material-icons.update-details {
+  color: #1d9bf0;
+  cursor: pointer;
+}
+
+.material-icons.dont-update-details {
+  color: #ae0f54;
+  cursor: pointer;
 }
