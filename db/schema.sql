@@ -33,3 +33,4 @@ CREATE TABLE comments(
   comments TEXT,
   time_stamp TEXT
   );
+  
