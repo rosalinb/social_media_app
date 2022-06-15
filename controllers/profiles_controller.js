@@ -34,6 +34,20 @@ router.put('/', (req, res) => {
 });
 // };
 
+router.get('/', (req, res) => {
+  Profile.listOwnPosts(req.session.userId).then((ownPosts) =>
+    res.json(ownPosts)
+  );
+});
+
+// router.delete('/:id', (req, res) => {
+//   const postId = req.params.id;
+
+//   Profile.delete(postId).then(() =>
+//     res.json({ message: 'delete successfully' })
+//   );
+// });
+
 // router.delete('/api/profiles/:id');
 
 module.exports = router;

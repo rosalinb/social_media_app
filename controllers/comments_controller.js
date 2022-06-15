@@ -4,11 +4,21 @@ const router = express.Router();
 const Comment = require("../models/comment")
 
 router.post('/', (req, res) => {
-    const post_id = req.session
+    const post_id = req.body.post_id
     const commenter_id = req.session.userId
-    const comment = req.body.comment
+    const comment = req.body.comments
+
 
     Comment
-    .findPost()
-    debugger
+    .create(post_id, commenter_id, comment)
+    .then(comments => res.json(comments))
 })
+
+router.get("/", (req, res) => {
+    Comment
+    .findAll()
+    .then((comments) => res.json(comments));
+  });
+  
+
+module.exports = router
