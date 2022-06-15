@@ -24,7 +24,7 @@
   gap: 10px;
   color: white;
   margin-bottom: 40px;
-  cursor`: pointer;
+  cursor: pointer;
 }
 
 .nav-bar li:hover {
@@ -46,6 +46,6 @@ div.entry-page-wrapper.user-page-wrapper {
     gap: 3vw;
   }
   .attachments-for-post {
-    width: 150px;
+    width: 200px;
   }
 }

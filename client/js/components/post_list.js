@@ -24,7 +24,7 @@ function renderPostsList() {
         </header>
         
         <p class="p-tweets">${post.post}</p>
-        <img src="${post.attachment}" alt="attachment" width="400px">
+        <img class='attachments-for-post' src="${post.attachment}" alt="attachment" width="400px">
         <p class="p-tweets">Posted on ${post.time_stamp}</p>
         
         <form onSubmit="likePost(event)">
