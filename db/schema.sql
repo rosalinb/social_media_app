@@ -28,7 +28,7 @@ CREATE TABLE likes(
 
 CREATE TABLE comments(
   id SERIAL PRIMARY KEY,
-  post_id TEXT,
+  post_id INT,
   commenter_id INT,
   comments TEXT,
   time_stamp TEXT
